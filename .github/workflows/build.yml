@@ -9,6 +9,12 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        config:
+          - { tag: "test", dockerfile: "test/Dockerfile"}
+
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -25,9 +31,9 @@ jobs:
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
-          context: test
+          context: .
           push: true
-          tags: |
-            ghcr.io/bnosac/blackbar-test:latest
+          tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:latest"
+          file: ${{ matrix.config.dockerfile }}
