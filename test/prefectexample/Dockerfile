@@ -15,7 +15,7 @@ ARG BLACKBAR_S3_SECRET_ACCESS_KEY="provide-supersecret-key"
 # Login + indicate under which workspace this project is run
 ARG PREFECT_API_KEY="provide-prefect-api-key"
 ARG PREFECT_WORKSPACE="blackbar/data-flows"
-RUN echo 'cloud' | prefect cloud login --key \${PREFECT_API_KEY} --workspace \${PREFECT_WORKSPACE}
+RUN echo 'cloud' | prefect cloud login --key ${PREFECT_API_KEY} --workspace ${PREFECT_WORKSPACE}
 # Work queue to listen to tasks to execute
 ENV PREFECT_WORKQUEUE="blackbar-test"
 
@@ -40,10 +40,10 @@ RUN echo "Finished installation of python package"
 # RUN python -m pip install prefect
 
 # Test
-ENV TEST=\${PREFECT_WORKSPACE}
+ENV TEST=${PREFECT_WORKSPACE}
 
 # Get Python code to schedule
 COPY deployment.py /opt/prefect/flows/deployment.py
 
 # Create the Deployment + start an agent to listen to tasks in the workqueue
-CMD python flows/deployment.py && prefect agent start --work-queue \${PREFECT_WORKQUEUE}
+CMD python flows/deployment.py && prefect agent start --work-queue ${PREFECT_WORKQUEUE}
