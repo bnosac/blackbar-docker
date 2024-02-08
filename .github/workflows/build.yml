@@ -15,6 +15,7 @@ jobs:
       matrix:
         config:
           - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile"}
+          - { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile"}
 
     steps:
       - name: Clone
