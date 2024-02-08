@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         config:
-          - { tag: "test", dockerfile: "test/Dockerfile"}
+          - { tag: "test", dockerfile: "anonimisation/Dockerfile"}
 
     steps:
       - name: Set up QEMU
