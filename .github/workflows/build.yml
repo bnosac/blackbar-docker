@@ -15,7 +15,8 @@ jobs:
       matrix:
         config:
           - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
-          - { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
+          - { tag: "anonimisation-base", dockerfile: "test/anonimisation/Dockerfile", context: "test/anonimisation"}
+          #- { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
 
     steps:
       - name: Clone
