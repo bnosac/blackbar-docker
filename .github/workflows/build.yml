@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         config:
-          - { tag: "test", dockerfile: "./test/Dockerfile", context: "./test"}
+          - { tag: "test", dockerfile: "test/Dockerfile"}
 
     steps:
       - name: Set up QEMU
@@ -34,7 +34,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5
         with:
-          context: ${{ matrix.config.context }}
+          context: .
           push: true
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:latest"
           file: ${{ matrix.config.dockerfile }}
