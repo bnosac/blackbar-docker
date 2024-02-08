@@ -15,7 +15,7 @@ jobs:
       matrix:
         config:
           - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
-          - { tag: "anonimisation-base", dockerfile: "anonimisation/Dockerfile", context: "anonimisation"}
+          - { tag: "base", dockerfile: "anonimisation/Dockerfile", context: "anonimisation"}
           #- { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
 
     steps:
