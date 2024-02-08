@@ -27,7 +27,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          file: ./test/Dockerfile
+          context: test
           push: true
           tags: |
             ghcr.io/bnosac/blackbar-test:latest
