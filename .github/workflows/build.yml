@@ -14,8 +14,8 @@ jobs:
     strategy:
       matrix:
         config:
-          - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile"}
-          - { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile"}
+          - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
+          - { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
 
     steps:
       - name: Clone
@@ -38,7 +38,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ matrix.config.context }}
           push: true
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:latest"
           file: ${{ matrix.config.dockerfile }}
