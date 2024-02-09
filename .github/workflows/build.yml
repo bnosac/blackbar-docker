@@ -49,6 +49,6 @@ jobs:
           context: ${{ matrix.config.context }}
           push: true
           tags: |
-            "blackbar-${{ matrix.config.tag }}:latest"
+            "registry.datatailor.be/blackbar-${{ matrix.config.tag }}:latest"
             "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:latest"
           file: ${{ matrix.config.dockerfile }}
