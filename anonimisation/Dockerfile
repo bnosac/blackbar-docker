@@ -74,7 +74,6 @@ ENV PREFECT_API_KEY=${PREFECT_API_KEY}
 ARG PREFECT_WORKSPACE="blackbar/data-flows"
 ENV PREFECT_WORKSPACE=${PREFECT_WORKSPACE}
 ENV PREFECT_WORKQUEUE="blackbar-test"
-#RUN echo 'cloud' | prefect cloud login --key ${PREFECT_API_KEY} --workspace ${PREFECT_WORKSPACE}
 
 ##
 ## Inception settings 
