@@ -24,7 +24,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 ## Install all Python software dependencies
 ##
 COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
+RUN python -m pip install --no-cache-dir -r requirements.txt
 
 # Compatibility issues with prefect/pydantic/dkpro-cassis/attrs
 #RUN python -m pip install attrs==21.2
