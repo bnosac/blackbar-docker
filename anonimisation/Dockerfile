@@ -1,4 +1,4 @@
-FROM prefecthq/prefect:2.14.20-python3.10
+FROM prefecthq/prefect:2.15.0-python3.10
 LABEL maintainer="BNOSAC blackbar@bnosac.be"
 
 ##
