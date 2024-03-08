@@ -13,3 +13,4 @@ urllib3==1.26.15
 requests-toolbelt==0.10.1
 #prefect-ray
 prefect-dask
+faker
