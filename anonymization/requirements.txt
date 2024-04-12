@@ -15,3 +15,4 @@ requests-toolbelt==0.10.1
 prefect-dask
 faker==24.0.0
 dateparser==1.2.0
+babel==2.14.0
