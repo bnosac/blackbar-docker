@@ -1,26 +1,22 @@
 #!/bin/ash
 set -e
 
-echo "Initialising ShinyProxy configuration..."
-
-cd ${SHINYPROXY_APPLICATION_DIR}
-echo "  - checking ${PWD} for Shinyproxy config file"
+echo "Checking ${SHINYPROXY_APPLICATION_DIR} for Shinyproxy config file"
 
 # substitute ${ENV_VARIABLE}s with container environment variables
-if [ -f application.tmp ]; then
+if [ -f ${SHINYPROXY_APPLICATION_DIR}/application.tmp ]; then
    echo "  - found application.tmp; interpolating to application.yml"
-   envsubst < application.tmp > application.yml
+   envsubst < ${SHINYPROXY_APPLICATION_DIR}/application.tmp > ${SHINYPROXY_APPLICATION_DIR}/application.yml
 fi
 
 # make the shinyproxy configuration available to the application
-if [ -f 'application.yml' ]; then
-   ln -s ${PWD}/application.yml ${SHINYPROXY_INSTALL_DIR}/application.yml
-   echo "  - created symbolic link from ${PWD}/application.yml to ${SHINYPROXY_INSTALL_DIR}/application.yml"
-   echo "Completed ShinyProxy configuration"
+if [ -f ${SHINYPROXY_APPLICATION_DIR}/application.yml ]; then
+   ln -s ${SHINYPROXY_APPLICATION_DIR}/application.yml ${SHINYPROXY_INSTALL_DIR}/application.yml
+   echo "  - created symbolic link from ${SHINYPROXY_APPLICATION_DIR}/application.yml to ${SHINYPROXY_INSTALL_DIR}/application.yml"
 else
    echo "No 'application.yml' or 'application.tmp' was found: defaulting to demo configuration"
 fi
 
-cd ${SHINYPROXY_INSTALL_DIR}
+#cd ${SHINYPROXY_INSTALL_DIR}
 
 exec "$@"
