@@ -17,6 +17,7 @@ jobs:
           - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
           - { tag: "apps", dockerfile: "apps/Dockerfile", context: "apps"}
+          - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}
           #- { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
 
     steps:
