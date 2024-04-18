@@ -3,7 +3,7 @@ set -e
 
 echo "Initialising ShinyProxy configuration..."
 
-cd ${SHINYPROXY_APP_DIR}
+cd ${SHINYPROXY_APPLICATION_DIR}
 echo "  - checking ${PWD} for Shinyproxy config file"
 
 # substitute ${ENV_VARIABLE}s with container environment variables
