@@ -4,7 +4,7 @@ Public docker images for project blackbar
 
 - **blackbar-base**:  
 
-   - Docker image based on prefecthq/prefect, version 2.15.0-python3.10
+   - Docker image based on prefecthq/prefect, version 2.15.0-python3.10 which is based on Ubuntu 20.04
    - Containing core software for project blackbar
 
 ```
@@ -18,4 +18,12 @@ docker pull ghcr.io/bnosac/blackbar-base:latest
 
 ```
 docker pull ghcr.io/bnosac/blackbar-apps:latest
+```
+
+- **blackbar-shinyproxy**:  
+
+   - Docker image containing ShinyProxy 
+
+```
+docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
 ```
