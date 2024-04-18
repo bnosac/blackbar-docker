@@ -7,3 +7,9 @@ Public docker images for project blackbar
 ```
 docker pull ghcr.io/bnosac/blackbar-base:latest
 ```
+
+- **blackbar-apps**:  
+
+```
+docker pull ghcr.io/bnosac/blackbar-apps:latest
+```
