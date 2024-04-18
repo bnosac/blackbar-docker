@@ -16,6 +16,7 @@ jobs:
         config:
           - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
+          - { tag: "apps", dockerfile: "apps/Dockerfile", context: "apps"}
           #- { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
 
     steps:
