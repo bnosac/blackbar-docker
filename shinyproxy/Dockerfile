@@ -15,8 +15,8 @@ RUN wget https://www.shinyproxy.io/downloads/shinyproxy-${SHINYPROXY_VERSION}.ja
 
 ## Script init-application-yml.sh makes sure application.yml is put from ${SHINYPROXY_APPLICATION_DIR}/application.yml to ${SHINYPROXY_INSTALL_DIR}/application.yml 
 ## Runs shinyproxy from the SHINYPROXY_INSTALL_DIR
-COPY ./entrypoint.sh init-application-yml.sh
+COPY ./entrypoint.sh ${SHINYPROXY_INSTALL_DIR}/init-application-yml.sh
 RUN chmod +x ./init-application-yml.sh
-ENTRYPOINT ["sh", "./init-application-yml.sh"]
+ENTRYPOINT ["sh", "${SHINYPROXY_INSTALL_DIR}/init-application-yml.sh"]
 
 CMD ["java", "-jar", "shinyproxy.jar"]
