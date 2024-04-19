@@ -24,4 +24,11 @@ RUN apt update -qq \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
 
+##
+## User blackbar
+##
+RUN useradd -ms /bin/bash blackbar
+USER blackbar
+WORKDIR /home/blackbar
+
 CMD bash
