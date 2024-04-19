@@ -19,4 +19,9 @@ COPY ./entrypoint.sh /opt/shinyproxy/init-application-yml.sh
 RUN chmod +x /opt/shinyproxy/init-application-yml.sh
 ENTRYPOINT ["sh", "/opt/shinyproxy/init-application-yml.sh"]
 
+##
+## User blackbar
+##
+RUN useradd -ms /bin/bash blackbar
+
 CMD ["java", "-jar", "/opt/shinyproxy/shinyproxy.jar"]
