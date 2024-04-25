@@ -24,6 +24,8 @@ RUN apt update -qq \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
 
+RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofile.site
+
 ##
 ## User blackbar
 ##
@@ -32,7 +34,6 @@ RUN useradd -c 'shiny' --uid 1000 --gid 1000 --create-home --home-dir /home/blac
 USER blackbar
 WORKDIR /home/blackbar
 EXPOSE 3838
-RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofile.site
 
 
 CMD bash
