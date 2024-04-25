@@ -27,8 +27,10 @@ RUN apt update -qq \
 ##
 ## User blackbar
 ##
-RUN useradd -ms /bin/bash blackbar
+RUN groupadd --gid 1000 shiny 
+RUN useradd -c 'shiny' --uid 1000 --gid 1000 --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
 USER blackbar
 WORKDIR /home/blackbar
+EXPOSE 3838
 
 CMD bash
