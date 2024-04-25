@@ -23,6 +23,7 @@ RUN apt update -qq \
     && apt-get autoremove -y --quiet \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
+RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /usr/local/lib/R/etc/Rprofile.site
 
 ##
 ## User blackbar
