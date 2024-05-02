@@ -16,4 +16,4 @@ prefect-dask
 faker==24.0.0
 dateparser==1.2.0
 babel==2.14.0
-dotenv
+python-dotenv==1.0.1
