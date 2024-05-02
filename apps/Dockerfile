@@ -20,9 +20,12 @@ RUN apt update -qq \
     && apt-get install -y --no-install-recommends r-base \
     && apt-get install -y --no-install-recommends r-cran-rcpp r-cran-data.table r-cran-jsonlite r-cran-zip \
     && apt-get install -y --no-install-recommends r-cran-shiny \
+    && apt-get install -y --no-install-recommends r-cran-htmltools r-cran-rmarkdown r-cran-shinydashboard \
+    && apt-get install -y --no-install-recommends r-cran-reticulate \
     && apt-get autoremove -y --quiet \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
+RUN Rscript -e "install.packages(c('bslib', 'flexdashboard'), repos = c(CRAN = 'https://cran.r-project.org/'), clean = TRUE)"
 
 RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofile.site
 
