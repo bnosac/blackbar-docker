@@ -17,7 +17,7 @@ docker pull ghcr.io/bnosac/blackbar-base:latest
    - Containing core software for the apps
 
 ```
-docker pull ghcr.io/bnosac/blackbar-apps:latest
+docker pull ghcr.io/bnosac/blackbar-base-apps:latest
 ```
 
 - **blackbar-shinyproxy**:  
