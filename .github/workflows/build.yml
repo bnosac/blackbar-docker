@@ -14,11 +14,11 @@ jobs:
     strategy:
       matrix:
         config:
-          - { tag: "prefectinspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
           - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}
-          #- { tag: "prefectexample", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
+          - { tag: "prefect-example", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
+          - { tag: "prefect-inspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
 
     steps:
       - name: Clone
