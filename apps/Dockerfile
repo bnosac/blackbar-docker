@@ -20,8 +20,8 @@ RUN apt update -qq \
     && apt-get install -y --no-install-recommends r-base \
     && apt-get install -y --no-install-recommends r-cran-rcpp r-cran-data.table r-cran-jsonlite r-cran-zip \
     && apt-get install -y --no-install-recommends r-cran-shiny \
-    && apt-get install -y --no-install-recommends r-cran-htmltools r-cran-rmarkdown r-cran-shinydashboard r-cran-bslib r-cran-fontawesome r-cran-sass \
-    && apt-get install -y --no-install-recommends r-cran-reticulate r-cran-remotes r-cran-farver r-cran-curl r-cran-dt r-cran-httr \
+    && apt-get install -y --no-install-recommends r-cran-htmltools r-cran-rmarkdown r-cran-shinydashboard r-cran-bslib r-cran-fontawesome r-cran-sass r-cran-knitr r-cran-yaml \
+    && apt-get install -y --no-install-recommends r-cran-reticulate r-cran-remotes r-cran-farver r-cran-curl r-cran-dt r-cran-httr r-cran-openssl \
     && apt-get autoremove -y --quiet \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
