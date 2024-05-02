@@ -21,7 +21,7 @@ RUN apt update -qq \
     && apt-get install -y --no-install-recommends r-cran-rcpp r-cran-data.table r-cran-jsonlite r-cran-zip \
     && apt-get install -y --no-install-recommends r-cran-shiny \
     && apt-get install -y --no-install-recommends r-cran-htmltools r-cran-rmarkdown r-cran-shinydashboard \
-    && apt-get install -y --no-install-recommends r-cran-reticulate \
+    && apt-get install -y --no-install-recommends r-cran-reticulate r-cran-jsonlite \
     && apt-get autoremove -y --quiet \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
