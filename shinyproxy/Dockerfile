@@ -1,4 +1,8 @@
 FROM openanalytics/shinyproxy:3.0.2
+LABEL maintainer="BNOSAC blackbar@bnosac.be"
+LABEL org.opencontainers.image.source=https://github.com/bnosac/blackbar-docker
+LABEL org.opencontainers.image.description="ShinyProxy for project blackbar"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG SHINYPROXY_VERSION=3.0.2
 ENV SHINYPROXY_VERSION=$SHINYPROXY_VERSION

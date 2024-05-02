@@ -1,5 +1,8 @@
 FROM prefecthq/prefect:2.14.20-python3.10
 LABEL maintainer="BNOSAC blackbar@bnosac.be"
+LABEL org.opencontainers.image.source=https://github.com/bnosac/blackbar-docker
+LABEL org.opencontainers.image.description="Example docker images for running a Prefect flow"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 # General settings
 ARG BLACKBAR_SCHEDULER="prefect"

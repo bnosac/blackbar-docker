@@ -1,5 +1,8 @@
 FROM ghcr.io/bnosac/blackbar-base:latest
 LABEL maintainer="BNOSAC blackbar@bnosac.be"
+LABEL org.opencontainers.image.source=https://github.com/bnosac/blackbar-docker
+LABEL org.opencontainers.image.description="Anonymisation and Pseudonymisation applications - open libraries"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ##
 ## Install all Python software dependencies
