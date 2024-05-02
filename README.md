@@ -11,10 +11,10 @@ Public docker images for project blackbar
 docker pull ghcr.io/bnosac/blackbar-base:latest
 ```
 
-- **blackbar-apps**:  
+- **blackbar-base-apps**:  
 
    - Docker image based on ghcr.io/bnosac/blackbar-base
-   - Containing core software for the apps
+   - Containing core software for the webapps
 
 ```
 docker pull ghcr.io/bnosac/blackbar-base-apps:latest
