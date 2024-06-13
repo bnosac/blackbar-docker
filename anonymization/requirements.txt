@@ -1,7 +1,7 @@
 pandas
 numpy
 pycaprio @ git+https://github.com/JavierLuna/pycaprio.git@0.2.1#egg=pycaprio
-dkpro-cassis @ git+https://github.com/dkpro/dkpro-cassis.git@e05ef70280312d401c85a938f36d2af16534f370
+dkpro-cassis==0.9.1
 spacy
 torch
 biopython==1.83.0

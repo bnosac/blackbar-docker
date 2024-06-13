@@ -32,8 +32,8 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 # Compatibility issues with prefect/pydantic/dkpro-cassis/attrs
 #RUN python -m pip install attrs==21.2
 #RUN python -m pip install attrs==23.1.0
-RUN python -m pip uninstall --yes pydantic
-RUN python -m pip install pydantic==1.10.13
+#RUN python -m pip uninstall --yes pydantic
+#RUN python -m pip install pydantic==1.10.13
 #RUN python -m pip install prefect==2.14.11
 
 ####################################################################################################
