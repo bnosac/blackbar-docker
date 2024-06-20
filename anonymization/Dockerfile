@@ -74,6 +74,8 @@ ENV BLACKBAR_DB_PASSWORD="provide-supersecret-password"
 # Login + indicate under which workspace this project is run
 ARG PREFECT_API_KEY="provide-prefect-api-key"
 ENV PREFECT_API_KEY=${PREFECT_API_KEY}
+ARG PREFECT_WORKPOOL="default-agent-pool"
+ENV PREFECT_WORKPOOL=${PREFECT_WORKPOOL}
 ARG PREFECT_WORKSPACE="blackbar/data-flows"
 ENV PREFECT_WORKSPACE=${PREFECT_WORKSPACE}
 ENV PREFECT_WORKQUEUE="blackbar-test"
