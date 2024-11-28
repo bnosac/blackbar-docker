@@ -1,6 +1,6 @@
 pandas
 numpy
-pycaprio==0.3.0
+pycaprio @ git+https://github.com/JavierLuna/pycaprio.git@0.2.1#egg=pycaprio
 dkpro-cassis==0.9.1
 spacy
 torch
