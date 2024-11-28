@@ -16,7 +16,8 @@ jobs:
         config:
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
           - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
-          - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}
+          - { tag: "inception", dockerfile: "inception/Dockerfile", context: "inception"}
+          - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}          
           - { tag: "prefect-example", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
 
