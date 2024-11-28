@@ -1,6 +1,8 @@
 FROM minio/minio:latest AS minio
 #FROM ghcr.io/inception-project/inception:34.3
-FROM ghcr.io/inception-project/inception:31.0
+#FROM ghcr.io/inception-project/inception:31.0
+FROM ghcr.io/inception-project/inception:28.5
+
 ##
 ## Minio
 ##
@@ -25,6 +27,7 @@ VOLUME ["/s3"]
 ## Inception
 ##
 EXPOSE 8080
+ENV INCEPTION_ARGUMENTS= 
 
 ##
 ## Combine Minio + Inception
@@ -44,5 +47,7 @@ ENV MINIO_VOLUMES=/s3
 #CMD ["minio server"]
 #CMD /usr/bin/minio server /data --console-address ":9901"
 #CMD minio server /data --console-address ":9901" && /opt/inception/launch.sh java ${JAVA_MEMORY_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}
-CMD /opt/inception/launch.sh java ${JAVA_MEMORY_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}\
+#CMD /opt/inception/launch.sh java ${JAVA_MEMORY_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}\
+#  && minio server --address ":9900" --console-address ":9901"
+CMD java "-Xmx750m" -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}\
   && minio server --address ":9900" --console-address ":9901"
