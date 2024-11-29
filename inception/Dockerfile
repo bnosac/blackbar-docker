@@ -1,6 +1,5 @@
 FROM minio/minio:latest AS minio
 #FROM ghcr.io/inception-project/inception:34.3
-#FROM ghcr.io/inception-project/inception:31.0
 FROM ghcr.io/inception-project/inception:28.5
 
 ##
@@ -22,32 +21,29 @@ COPY --from=minio /usr/bin/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 EXPOSE 9900
 EXPOSE 9901
 VOLUME ["/s3"]
+ENV MINIO_VOLUMES=/data
+
+ARG BLACKBAR_S3_ACCESS_KEY_ID="deid"
+ARG BLACKBAR_S3_SECRET_ACCESS_KEY="provide-supersecret-key"
+ENV BLACKBAR_S3_ACCESS_KEY_ID=${BLACKBAR_S3_ACCESS_KEY_ID}
+ENV BLACKBAR_S3_SECRET_ACCESS_KEY=${BLACKBAR_S3_SECRET_ACCESS_KEY}
+ENV MINIO_BROWSER_REDIRECT_URL=
 
 ##
 ## Inception
 ##
 EXPOSE 8080
-ENV INCEPTION_ARGUMENTS= 
 
 ##
-## Combine Minio + Inception
+## Combine Minio + Inception with supervisord
 ##
 RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
     && apt-get install -y supervisor
-ENV MINIO_ROOT_USER=admin
-ENV MINIO_ROOT_PASSWORD=admin
-#ENV MINIO_BROWSER_REDIRECT_URL="https://deid.datatailor.be/s3/"
-#ENV MINIO_ACCESS_KEY=${MINIO_ROOT_USER:-blackbar}
-#ENV MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD:-blackbar}
-ENV MINIO_VOLUMES=/s3
-#ENV MINIO_OPTS="--console-address :9901"
 
-#CMD ["minio server"]
-#CMD /usr/bin/minio server /data --console-address ":9901"
-#CMD minio server /data --console-address ":9901" && /opt/inception/launch.sh java ${JAVA_MEMORY_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}
-#CMD /opt/inception/launch.sh java ${JAVA_MEMORY_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}\
-#  && minio server --address ":9900" --console-address ":9901"
-CMD java "-Xmx750m" -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar ${INCEPTION_ARGUMENTS}\
-  && minio server --address ":9900" --console-address ":9901"
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#COPY start_minio.sh /usr/bin/start_minio.sh
+
+#CMD ["/usr/bin/supervisord", "--version"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
