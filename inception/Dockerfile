@@ -15,7 +15,7 @@ COPY --from=minio /usr/bin/curl* /usr/bin/
 COPY --from=minio /licenses/CREDITS /licenses/CREDITS
 COPY --from=minio /licenses/LICENSE /licenses/LICENSE
 
-COPY --from=minio /usr/bin/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
+#COPY --from=minio /usr/bin/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 #ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 EXPOSE 9900
@@ -33,6 +33,12 @@ ENV MINIO_BROWSER_REDIRECT_URL=
 ## Inception
 ##
 EXPOSE 8080
+ARG INCEPTION_HOST=http://localhost:8080
+ARG INCEPTION_USERNAME="admin"
+ARG INCEPTION_PASSWORD="provide-supersecret-key"
+ENV INCEPTION_HOST=${INCEPTION_HOST}
+ENV INCEPTION_USERNAME=${INCEPTION_USERNAME}
+ENV INCEPTION_PASSWORD=${INCEPTION_PASSWORD}
 
 ##
 ## Combine Minio + Inception with supervisord
@@ -40,10 +46,11 @@ EXPOSE 8080
 RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get install -y supervisor
+    && apt-get install -y supervisor \
+    && apt-get install -y apache2-utils
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-#COPY start_minio.sh /usr/bin/start_minio.sh
+COPY start_minio.sh /usr/bin/start_minio.sh
+COPY start_inception.sh /usr/bin/start_inception.sh
 
-#CMD ["/usr/bin/supervisord", "--version"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
