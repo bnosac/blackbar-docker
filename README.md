@@ -20,6 +20,15 @@ docker pull ghcr.io/bnosac/blackbar-base:latest
 docker pull ghcr.io/bnosac/blackbar-base-apps:latest
 ```
 
+- **blackbar-inception**:  
+
+   - Docker image containing Inception and Minio 
+
+```
+docker pull ghcr.io/bnosac/blackbar-inception:latest
+```
+
+
 - **blackbar-shinyproxy**:  
 
    - Docker image containing ShinyProxy 
