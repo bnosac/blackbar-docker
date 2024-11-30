@@ -1,7 +1,7 @@
 FROM minio/minio:latest AS minio
 #FROM ghcr.io/inception-project/inception:34.3 AS inception
 FROM ghcr.io/inception-project/inception:28.5 AS inception
-FROM mariadb:10.6
+FROM mariadb:10.7
 
 ############################################################################################
 ## Minio
@@ -60,6 +60,11 @@ ENV INCEPTION_DB_PASSWORD=${INCEPTION_PASSWORD}
 ENV INCEPTION_DB_DIALECT=org.hibernate.dialect.MariaDB106Dialect
 ENV INCEPTION_DB_DRIVER=org.mariadb.jdbc.Driver
 
+##
+## Mariadb
+##
+RUN cp /usr/local/bin/healthcheck.sh /usr/bin/healthcheck-mariadb.sh
+RUN cp /usr/local/bin/docker-entrypoint.sh /usr/bin/docker-entrypoint-mariadb.sh
 ## For the MariaDB allow root
 ARG MARIADB_MYSQL_SOCKET_DIRECTORY='/var/run/mysqld'
 RUN mkdir -p $MARIADB_MYSQL_SOCKET_DIRECTORY && \
