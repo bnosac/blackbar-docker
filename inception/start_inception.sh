@@ -8,15 +8,18 @@ echo $INCEPTION_PASSWORD;
 echo "------- Defining inception properties ------"
 cat << \EOF | tee /export/settings.properties
 ##
-## Login of admin
+## Login settings
 ##
-#security.default-admin-username=INCEPTION_USERNAME
-#security.default-admin-password=INCEPTION_PASSWORD
+auth.mode=database
+security.default-admin-username=INCEPTION_USERNAME
+security.default-admin-password=INCEPTION_PASSWORD
 security.default-admin-remote-access=true
 remote-api.enabled=true
+auth.preauth.newuser.roles=ROLE_PROJECT_CREATOR
 ##
 ## Hosted at /inception
 ##
+server.port=8080
 server.servlet.context-path=/inception
 sharing.invites.enabled=true
 sharing.invites.invite-base-url=INCEPTION_HOST
@@ -45,9 +48,9 @@ websocket.enabled=true
 telemetry.auto-respond=REJECT
 warnings.embeddedDatabase=false
 EOF
-#sed -i 's/INCEPTION_USERNAME/'"$INCEPTION_USERNAME"'/g' /export/settings.properties
-#sed -i 's/INCEPTION_PASSWORD/{bcrypt}'"$INCEPTION_PASSWORD"'/g' /export/settings.properties
-sed -i 's/INCEPTION_HOST/'"$INCEPTION_HOST"'/g' /export/settings.properties
+sed -i 's|INCEPTION_USERNAME|'"$INCEPTION_USERNAME"'|g' /export/settings.properties
+sed -i 's|INCEPTION_PASSWORD|{bcrypt}'"$INCEPTION_PASSWORD"'|g' /export/settings.properties
+sed -i 's|INCEPTION_HOST|'"$INCEPTION_HOST"'|g' /export/settings.properties
 cat /export/settings.properties
 
 echo "------- Launching Inception ------"
