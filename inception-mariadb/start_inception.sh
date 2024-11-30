@@ -1,6 +1,46 @@
 #! /bin/bash
 
 ###############################################################################################
+## If INCEPTION_DB_URL is not filled in and INCEPTION_DB_DRIVER = org.mariadb.jdbc.Driver
+##  - Connect to the internal MariaDB
+## If INCEPTION_DB_URL is not filled in and INCEPTION_DB_DRIVER != org.mariadb.jdbc.Driver
+##  - Connect to the internal HyperSQL
+## If INCEPTION_DB_URL is filled in connect to the external MariaDB
+##
+DB_SETUP=default
+if [[ -z "$INCEPTION_DB_URL" && "$INCEPTION_DB_DRIVER" == "org.mariadb.jdbc.Driver" ]]; then
+DB_SETUP=mariadb_internal
+fi
+if [[ -n "$INCEPTION_DB_URL" ]]; then
+DB_SETUP=db_external
+fi
+
+if [[ "$DB_SETUP" == "default" ]]; then
+##
+## Use internal HyperSQL database
+##
+echo "\$INCEPTION_DB_URL is empty, Inception will use an HyperSQL database to store it's metadata"
+unset INCEPTION_DB_URL
+unset INCEPTION_DB_USERNAME
+unset INCEPTION_DB_PASSWORD
+unset INCEPTION_DB_DIALECT
+unset INCEPTION_DB_DRIVER
+fi
+if [[ "$DB_SETUP" == "mariadb_internal" ]]; then
+##
+## Use internal MariaDB database
+##
+echo "\$INCEPTION_DB_URL is empty, Inception will start up a MariaDB to store it's metadata"
+INCEPTION_DB_URL="jdbc:mariadb://localhost:3306/inception?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+INCEPTION_DB_USERNAME=${INCEPTION_DB_USERNAME}
+INCEPTION_DB_PASSWORD=${INCEPTION_DB_PASSWORD}
+INCEPTION_DB_DIALECT=org.hibernate.dialect.MariaDB106Dialect
+INCEPTION_DB_DRIVER=org.mariadb.jdbc.Driver
+fi
+echo "------- Inception DB URL ------"
+echo $INCEPTION_DB_URL
+
+###############################################################################################
 ## Defining the Inception properties
 ##  - encrypt the admin password
 ##  - define all the other inception properties
