@@ -23,7 +23,7 @@ EXPOSE 9901
 VOLUME ["/s3"]
 ENV MINIO_VOLUMES=/data
 
-ARG BLACKBAR_S3_ACCESS_KEY_ID="deid"
+ARG BLACKBAR_S3_ACCESS_KEY_ID="admin"
 ARG BLACKBAR_S3_SECRET_ACCESS_KEY="provide-supersecret-key"
 ENV BLACKBAR_S3_ACCESS_KEY_ID=${BLACKBAR_S3_ACCESS_KEY_ID}
 ENV BLACKBAR_S3_SECRET_ACCESS_KEY=${BLACKBAR_S3_SECRET_ACCESS_KEY}
@@ -52,5 +52,7 @@ RUN set -ex \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start_minio.sh /usr/bin/start_minio.sh
 COPY start_inception.sh /usr/bin/start_inception.sh
+RUN chmod +x /usr/bin/start_minio.sh
+RUN chmod +x /usr/bin/start_inception.sh
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
