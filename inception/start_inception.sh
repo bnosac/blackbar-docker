@@ -1,12 +1,11 @@
 #! /bin/bash
 
-echo "------- Environment variables / Password encryption ------"
+echo "------- Encrypting Inception admin password ------"
 #env
 export INCEPTION_PASSWORD=$(htpasswd -bnBC 10 "" $INCEPTION_PASSWORD | tr -d ':\n')
-echo $INCEPTION_PASSWORD;
 
 echo "------- Defining inception properties ------"
-cat << \EOF | tee /export/settings.properties
+cat <<EOF >/export/settings.properties
 ##
 ## Login settings
 ##
