@@ -56,11 +56,7 @@ RUN set -ex \
     && apt-get install -y apache2-utils
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY start_minio.sh /usr/bin/start_minio.sh
 COPY start_inception.sh /usr/bin/start_inception.sh
-COPY start_mariadb.sh /usr/bin/start_mariadb.sh
-RUN chmod +x /usr/bin/start_minio.sh
 RUN chmod +x /usr/bin/start_inception.sh
-RUN chmod +x /usr/bin/start_mariadb.sh
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
