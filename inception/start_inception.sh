@@ -1,10 +1,15 @@
 #! /bin/bash
 
+###############################################################################################
+## Defining the Inception properties
+##  - encrypt the admin password
+##  - define all the other inception properties
+##
 echo "------- Encrypting Inception admin password ------"
-#env
 export INCEPTION_PASSWORD=$(htpasswd -bnBC 10 "" $INCEPTION_PASSWORD | tr -d ':\n')
 
-echo "------- Defining inception properties ------"
+if [ ! -f /export/settings.properties ]; then
+echo "------- Defining inception properties file ------"
 cat <<EOF >/export/settings.properties
 ##
 ## Login settings
@@ -44,13 +49,19 @@ websocket.enabled=true
 ##
 ## Disable some warnings
 ##
+warnings.embeddedDatabase=true
 telemetry.auto-respond=REJECT
-warnings.embeddedDatabase=false
 EOF
 sed -i 's|INCEPTION_USERNAME|'"$INCEPTION_USERNAME"'|g' /export/settings.properties
 sed -i 's|INCEPTION_PASSWORD|{bcrypt}'"$INCEPTION_PASSWORD"'|g' /export/settings.properties
 sed -i 's|INCEPTION_HOST|'"$INCEPTION_HOST"'|g' /export/settings.properties
+else 
+echo "------- Existing inception properties file ------"
+fi
 cat /export/settings.properties
 
+###############################################################################################
+## Launch Inception
+##
 echo "------- Launching Inception ------"
-java "-Xmx750m" -Djava.awt.headless=true -Dinception.home=/export -jar inception-app-standalone.jar
+java "-Xmx750m" -Djava.awt.headless=true -Dinception.home=/export -jar /opt/inception/inception-app-standalone.jar

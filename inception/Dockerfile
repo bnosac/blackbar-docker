@@ -39,6 +39,12 @@ ARG INCEPTION_PASSWORD="provide-supersecret-key"
 ENV INCEPTION_HOST=${INCEPTION_HOST}
 ENV INCEPTION_USERNAME=${INCEPTION_USERNAME}
 ENV INCEPTION_PASSWORD=${INCEPTION_PASSWORD}
+## Settings for the metadata database behind Inception
+ENV INCEPTION_DB_URL=
+ENV INCEPTION_DB_USERNAME=
+ENV INCEPTION_DB_PASSWORD=
+ENV INCEPTION_DB_DIALECT=
+ENV INCEPTION_DB_DRIVER=
 
 ##
 ## Combine Minio + Inception with supervisord
@@ -52,7 +58,9 @@ RUN set -ex \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start_minio.sh /usr/bin/start_minio.sh
 COPY start_inception.sh /usr/bin/start_inception.sh
+COPY start_mariadb.sh /usr/bin/start_mariadb.sh
 RUN chmod +x /usr/bin/start_minio.sh
 RUN chmod +x /usr/bin/start_inception.sh
+RUN chmod +x /usr/bin/start_mariadb.sh
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
