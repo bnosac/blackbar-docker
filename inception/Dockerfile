@@ -18,8 +18,8 @@ COPY --from=minio /licenses/LICENSE /licenses/LICENSE
 #COPY --from=minio /usr/bin/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 #ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-EXPOSE 9900
-EXPOSE 9901
+EXPOSE 9000
+EXPOSE 9001
 VOLUME ["/s3"]
 ENV MINIO_VOLUMES=/data
 
