@@ -16,8 +16,8 @@ jobs:
         config:
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
           - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
-          - { tag: "inception", dockerfile: "inception/Dockerfile", context: "inception"}
-          - { tag: "inception-mariadb", dockerfile: "inception-mariadb/Dockerfile", context: "inception-mariadb"}
+          - { tag: "inception-minio", dockerfile: "inception/inception-minio/Dockerfile", context: "inception/inception-minio"}
+          - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}          
           - { tag: "prefect-example", dockerfile: "test/prefectexample/Dockerfile", context: "test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "test/prefectinspect/Dockerfile", context: "test/prefectinspect"}
