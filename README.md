@@ -26,8 +26,8 @@ docker pull ghcr.io/bnosac/blackbar-base-apps:latest
    - Docker image containing Inception and Minio and MariaDB (blackbar-inception-mariadb)
 
 ```
-docker pull ghcr.io/bnosac/blackbar-inception:latest
-docker pull ghcr.io/bnosac/blackbar-inception-mariadb:latest
+docker pull ghcr.io/bnosac/blackbar-inception-minio:latest
+docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 ```
 
 
