@@ -5,14 +5,13 @@ dkpro-cassis==0.9.1
 spacy
 torch
 biopython==1.83.0
-jaydebeapi
+jaydebeapi==1.2.3
 minio
 podman
 attrs
 pydantic==1.10.11
 urllib3==1.26.15
 requests-toolbelt==0.10.1
-#prefect-ray
 prefect-dask
 faker==24.0.0
 dateparser==1.2.0
