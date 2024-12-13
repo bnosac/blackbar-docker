@@ -1,39 +1,29 @@
-FROM openanalytics/shinyproxy:3.0.2
-LABEL maintainer="BNOSAC blackbar@bnosac.be"
-LABEL org.opencontainers.image.source=https://github.com/bnosac/blackbar-docker
-LABEL org.opencontainers.image.description="ShinyProxy for project blackbar"
-LABEL org.opencontainers.image.licenses="Apache-2.0"
+FROM openanalytics/shinyproxy:3.0.2 AS shinyproxy
+FROM openjdk:11-jre-slim-buster
 
-ARG SHINYPROXY_VERSION=3.0.2
-ENV SHINYPROXY_VERSION=$SHINYPROXY_VERSION
-ARG SHINYPROXY_INSTALL_DIR=/opt/shinyproxy
-ENV SHINYPROXY_INSTALL_DIR=$SHINYPROXY_INSTALL_DIR
-ARG SHINYPROXY_APPLICATION_DIR=/etc/shinyproxy
-ARG SHINYPROXY_APPLICATION_DIR=/home/blackbar
-ENV SHINYPROXY_APPLICATION_DIR=$SHINYPROXY_APPLICATION_DIR
+RUN set -ex \
+    && DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get install -y gettext \
+    && apt-get install -y curl 
 
-##
-## Create group blackbar
-## Create user blackbar with own home directory
-## Add user shinyproxy to group blackbar
-##
-USER root
-RUN groupadd --gid 1001 blackbar \
-    && useradd -c 'shiny' -g 1001 --create-home --home-dir /home/blackbar --shell /bin/bash blackbar \
-    && usermod --append --groups blackbar shinyproxy \
-    && usermod --append --groups blackbar blackbar \
-    && mkdir /opt/shinyproxy/blackbar \
-    && chown -R shinyproxy:blackbar /opt/shinyproxy/blackbar \
-    && chgrp -R blackbar /opt/shinyproxy/blackbar \
-    && chmod -R g+rwX /opt/shinyproxy/blackbar
+## Copy over shinyproxy.jar from the official shinyproxy repository
+RUN mkdir /opt/shinyproxy
+ENV SHINY_USER blackbar
+RUN useradd -c 'blackbar user' -m -d /home/$SHINY_USER -s /sbin/nologin $SHINY_USER
+COPY --from=shinyproxy --chown=$SHINY_USER:$SHINY_USER /opt/shinyproxy/ /opt/shinyproxy/
 
-## Script init-application-yml.sh makes sure application.yml is put from ${SHINYPROXY_APPLICATION_DIR}/application.yml to ${SHINYPROXY_INSTALL_DIR}/application.yml 
-## Runs shinyproxy from the SHINYPROXY_INSTALL_DIR
-## #COPY ./entrypoint.sh /opt/shinyproxy/init-application-yml.sh
+## Entrypoint is shell script which overwrites the applications  
+ENV SHINYPROXY_APPLICATION_DIR /home/$SHINY_USER/apps
+
 ADD ./entrypoint.sh /opt/shinyproxy/init-application-yml.sh
 RUN chmod +x /opt/shinyproxy/init-application-yml.sh
 ENTRYPOINT ["sh", "/opt/shinyproxy/init-application-yml.sh"]
 
-## Run script init-application-yml.sh as user shinyproxy and run shinyproxy as user shinyproxy
-USER shinyproxy
-CMD ["java", "-noverify",  "-jar", "/opt/shinyproxy/shinyproxy.jar", "--spring.jmx.enabled=false", "--spring.config.location=/opt/shinyproxy/application.yml"]
+WORKDIR /opt/shinyproxy
+USER $SHINY_USER
+
+EXPOSE 8080
+
+# Start ShinyProxy with some extra parameters for faster startup (https://spring.io/blog/2018/11/08/spring-boot-in-a-container#tweaks)
+CMD ["java",  "-jar", "/opt/shinyproxy/shinyproxy.jar", "--spring.jmx.enabled=false", "--spring.config.location=/opt/shinyproxy/application.yml"]
