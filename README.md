@@ -38,3 +38,12 @@ docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 ```
 docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
 ```
+
+- **blackbar-rstudio**:  
+
+   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 
+
+```
+docker pull ghcr.io/bnosac/blackbar-rstudio:latest
+```
+
