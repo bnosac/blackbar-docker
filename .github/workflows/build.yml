@@ -38,7 +38,7 @@ jobs:
       - name: Set version of the images
         run: |
           if [[ "${{ github.ref_name }}" =~ ^v[0-9] ]]; then
-            echo "VERSION="${{ github.ref_name }}" >> $GITHUB_ENV
+            echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
           fi
           if [ "${{ github.event.inputs.version }}" != "latest" ]; then
             echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
