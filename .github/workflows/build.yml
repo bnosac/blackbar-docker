@@ -6,6 +6,12 @@ on:
       - 'master'
       - 'main'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version e.g v0.1'
+        required: false
+        type: string
+        default: 'latest'
 
 jobs:
   docker:
@@ -26,6 +32,20 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v3
+
+      - name: Set environment variable
+        run: |
+          if [[ "$GITHUB_REF_NAME" =~ ^v[0-9] ]]; then
+            echo "VERSION=$GITHUB_REF_NAME" >> $GITHUB_ENV
+          else
+            echo "VERSION=latest" >> $GITHUB_ENV
+          fi
+          if [ "${{ github.event.inputs.version }}" != "latest" ]; then
+            echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+          fi
+
+      - name: Print version
+        run: echo $VERSION
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
