@@ -75,7 +75,7 @@ jobs:
         with:
           context: ${{ matrix.config.context }}
           push: true
-          tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:$VERSION"            
+          tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ VERSION  }"            
           file: ${{ matrix.config.dockerfile }}
 
       - name: Build and push Dockerhub
@@ -83,7 +83,7 @@ jobs:
         with:
           context: ${{ matrix.config.context }}
           push: true
-          tags: "bnosac/blackbar-${{ matrix.config.tag }}:$VERSION"            
+          tags: "bnosac/blackbar-${{ matrix.config.tag }}:${{ VERSION  }"            
           file: ${{ matrix.config.dockerfile }}
 
       - name: Build and push registry.datatailor.be
@@ -91,5 +91,5 @@ jobs:
         with:
           context: ${{ matrix.config.context }}
           push: true
-          tags: "registry.datatailor.be/blackbar-${{ matrix.config.tag }}:$VERSION"            
+          tags: "registry.datatailor.be/blackbar-${{ matrix.config.tag }}:${{ VERSION  }"            
           file: ${{ matrix.config.dockerfile }}
