@@ -78,7 +78,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ matrix.config.context }}
-          push: true
+          push: ${{ github.event_name == 'workflow_dispatch' }}
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ env.VERSION }}"
           file: ${{ matrix.config.dockerfile }}
 
