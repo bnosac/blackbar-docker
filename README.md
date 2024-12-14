@@ -22,8 +22,10 @@ docker pull ghcr.io/bnosac/blackbar-base-apps:latest
 
 - **blackbar-inception**:  
 
-   - Docker image containing Inception and Minio (blackbar-inception)
-   - Docker image containing Inception and Minio and MariaDB (blackbar-inception-mariadb)
+   - Docker image containing Inception and Minio (blackbar-inception-minio)
+   - Docker image containing Inception and Minio and MariaDB (blackbar-inception-minio-mariadb)
+
+Inception 28.5, Minio RELEASE.2024-11-07T00-52-20Z, MariaDB 10.7
 
 ```
 docker pull ghcr.io/bnosac/blackbar-inception-minio:latest
@@ -33,7 +35,7 @@ docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 
 - **blackbar-shinyproxy**:  
 
-   - Docker image containing ShinyProxy 
+   - Docker image containing ShinyProxy 3.0.2 and openjdk 11
 
 ```
 docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
@@ -41,9 +43,8 @@ docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
 
 - **blackbar-rstudio**:  
 
-   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 
+   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21
 
 ```
 docker pull ghcr.io/bnosac/blackbar-rstudio:latest
 ```
-

@@ -1,4 +1,5 @@
-FROM minio/minio:latest AS minio
+#FROM minio/minio:latest AS minio
+FROM minio/minio:RELEASE.2024-11-07T00-52-20Z AS minio
 #FROM ghcr.io/inception-project/inception:34.3 AS inception
 FROM ghcr.io/inception-project/inception:28.5 AS inception
 FROM mariadb:10.7
