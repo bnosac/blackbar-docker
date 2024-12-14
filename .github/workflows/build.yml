@@ -43,6 +43,8 @@ jobs:
           if [ "${{ github.event.inputs.version }}" != ""]; then
             echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           fi
+      - name: Print version of images
+        run: echo "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ env.VERSION }}"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
