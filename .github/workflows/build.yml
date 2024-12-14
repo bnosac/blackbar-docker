@@ -12,6 +12,8 @@ on:
         required: false
         type: string
         default: 'latest'
+env:
+  VERSION: latest
 
 jobs:
   docker:
@@ -33,12 +35,10 @@ jobs:
       - name: Clone
         uses: actions/checkout@v3
 
-      - name: Set environment variable
+      - name: Set version of the images
         run: |
           if [[ "$GITHUB_REF_NAME" =~ ^v[0-9] ]]; then
             echo "VERSION=$GITHUB_REF_NAME" >> $GITHUB_ENV
-          else
-            echo "VERSION=latest" >> $GITHUB_ENV
           fi
           if [ "${{ github.event.inputs.version }}" != "latest" ]; then
             echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
