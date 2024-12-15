@@ -18,8 +18,8 @@
 - blackbar-base-apps: image based on ghcr.io/bnosac/blackbar-base + shiny and commonly used shiny extensions (rmarkdown/shinydashboard/slib/fontawesome/knitr/reticulate)
 - blackbar-inception-minio: Inception (28.5) and Minio (RELEASE.2024-11-07T00-52-20Z)
 - blackbar-inception-minio-mariadb: Inception (28.5) and Minio (RELEASE.2024-11-07T00-52-20Z) and MariaDB (10.7)
-- blackbar-shinyproxy: ShinyProxy 3.0.2 and openjdk 11
-- blackbar-rstudio: RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21 from eclipse-temurin 
+- blackbar-shinyproxy: ShinyProxy 3.0.2 and openjdk 11 based on Debian Buster
+- blackbar-rstudio: RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21 from eclipse-temurin, based on Ubuntu 20.04
 
 
 

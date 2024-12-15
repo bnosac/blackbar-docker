@@ -35,7 +35,7 @@ docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 
 - **blackbar-shinyproxy**:  
 
-   - Docker image containing ShinyProxy 3.0.2 and openjdk 11
+   - Docker image containing ShinyProxy 3.0.2 and openjdk 11 based on Debian Buster
 
 ```
 docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
@@ -43,7 +43,7 @@ docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
 
 - **blackbar-rstudio**:  
 
-   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21
+   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04
 
 ```
 docker pull ghcr.io/bnosac/blackbar-rstudio:latest
