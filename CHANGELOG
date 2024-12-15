@@ -10,7 +10,7 @@
     - added R packages 
         - 'curl', 'openssl', 'remotes', 'httr'
         - 'jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'
-        - 'shiny', 'knitr', 'htmltools', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'
+        - 'shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'
 
 ### Release 0.1
 
