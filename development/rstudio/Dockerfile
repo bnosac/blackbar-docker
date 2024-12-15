@@ -37,7 +37,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    python3.10 python3.10-dev \
+    python3.10 python3.10-dev python3.10-distutils \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 && update-alternatives --config python3

@@ -5,7 +5,7 @@
 - blackbar-rstudio: 
     - add pkg-config, cmake
     - added RETICULATE_PYTHON environment variable
-    - remove python3.10-tk and python3.10-distutils
+    - remove python3.10-tk
     - added pip
     - added R packages 
         - 'curl', 'openssl', 'remotes', 'httr'
