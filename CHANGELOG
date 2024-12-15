@@ -1,5 +1,17 @@
 ## CHANGELOG
 
+### Release 0.1.1
+
+- blackbar-rstudio: 
+    - add pkg-config, cmake
+    - added RETICULATE_PYTHON environment variable
+    - remove python3.10-tk and python3.10-distutils
+    - added pip
+    - added R packages 
+        - 'curl', 'openssl', 'remotes', 'httr'
+        - 'jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'
+        - 'shiny', 'knitr', 'htmltools', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'
+
 ### Release 0.1
 
 - blackbar-base: image based on prefecthq/prefect, version 2.15.0-python3.10 which is based on Ubuntu 20.04

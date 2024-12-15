@@ -12,6 +12,9 @@ RUN apt-get update \
     curl \
     bash \
     git \
+    pkg-config \
+    software-properties-common \
+    cmake \
     && rm -rf /var/lib/apt/lists/*
 
 ##
@@ -31,22 +34,26 @@ RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/
 ## Install Python 3.10 and Python package dependencies
 ##
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    software-properties-common pkg-config cmake \
-    && rm -rf /var/lib/apt/lists/*
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    python3.10 python3.10-dev python3.10-tk python3.10-distutils \
+    python3.10 python3.10-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 && update-alternatives --config python3
 COPY requirements.txt .
 #RUN python3.10 -m pip install --no-cache-dir -r requirements.txt
-#RUN python3 -m pip install --no-cache-dir -r requirements.txt
+#RUN python3    -m pip install --no-cache-dir -r requirements.txt
 RUN uv pip install --system --no-cache-dir -r requirements.txt
+RUN uv pip install --system pip
+
+##
+## Default R packages
+##
 ENV RETICULATE_PYTHON="/usr/bin/python3"
+RUN Rscript -e "install.packages(c('curl', 'openssl', 'remotes', 'httr'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'), clean = TRUE)"
 
 ##
 ## Rstudio initializations
