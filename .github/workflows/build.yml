@@ -27,7 +27,8 @@ jobs:
           - { tag: "inception-minio", dockerfile: "inception/inception-minio/Dockerfile", context: "inception/inception-minio"}
           - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}    
-          - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}                
+          - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
+          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}             
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
