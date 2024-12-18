@@ -21,6 +21,7 @@ COPY  --from=rstudio /rocker_scripts/pam-helper.sh /rocker_scripts/pam-helper.sh
 COPY  --from=rstudio /rocker_scripts/install_pandoc.sh /rocker_scripts/install_pandoc.sh
 COPY  --from=rstudio /rocker_scripts/install_quarto.sh /rocker_scripts/install_quarto.sh
 
+COPY  --from=rstudio /rocker_scripts/bin/ /rocker_scripts/bin/
 COPY  --from=rstudio /rocker_scripts/setup_R.sh /rocker_scripts/setup_R.sh
 RUN /rocker_scripts/install_R_source.sh
 RUN /rocker_scripts/setup_R.sh
