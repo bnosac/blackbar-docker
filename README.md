@@ -41,10 +41,12 @@ docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
 ```
 
-- **blackbar-rstudio**:  
+- blackbar development environments
 
-   - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04
+   - **blackbar-rstudio**: Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04
+   - **blackbar-vscode**: Docker image containing Visual Studio code, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04
 
 ```
 docker pull ghcr.io/bnosac/blackbar-rstudio:latest
+docker pull ghcr.io/bnosac/blackbar-vscode:latest
 ```
