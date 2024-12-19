@@ -100,4 +100,7 @@ RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
 
-USER coder
+RUN groupadd --gid 1000 shiny 
+RUN useradd -c 'shiny' --uid 1000 --gid 1000 --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
+USER blackbar
+#USER coder
