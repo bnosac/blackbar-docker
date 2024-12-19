@@ -79,5 +79,13 @@ COPY requirements.txt .
 RUN uv pip install --system --no-cache-dir -r requirements.txt
 RUN uv pip install --system pip
 
+##
+## Install VScode extensions
+##
+RUN code-server --install-extension Posit.shiny
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-toolsai.jupyter
+RUN code-server --install-extension quarto.quarto
+RUN code-server --install-extension REditorSupport.r
 
 USER coder
