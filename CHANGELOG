@@ -24,6 +24,7 @@
         - ms-toolsai.jupyter
         - quarto.quarto
         - REditorSupport.r
+        - ms-azuretools.vscode-docker
 
 ### Release 0.1
 

@@ -99,6 +99,7 @@ RUN code-server --install-extension ms-python.python
 RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
+RUN code-server --install-extension ms-azuretools.vscode-docker
 
 RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
 USER blackbar
