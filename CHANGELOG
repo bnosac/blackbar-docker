@@ -1,16 +1,29 @@
 ## CHANGELOG
 
 ### Release 0.1.1
-
+    
 - blackbar-rstudio: 
     - add pkg-config, cmake
     - added RETICULATE_PYTHON environment variable
     - remove python3.10-tk
     - added pip next to the existing uv
-    - added R packages 
+    - R packages 
         - 'curl', 'openssl', 'remotes', 'httr'
         - 'jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'
         - 'shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'
+- blackbar-vscode:
+    - Same software as blackbar-rstudio
+    - R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21 from eclipse-temurin, based on Ubuntu 20.
+    - R packages 
+        - 'curl', 'openssl', 'remotes', 'httr'
+        - 'jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'
+        - 'shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'
+    - Running VS code with extensions
+        - Posit.shiny
+        - ms-python.python 
+        - ms-toolsai.jupyter
+        - quarto.quarto
+        - REditorSupport.r
 
 ### Release 0.1
 

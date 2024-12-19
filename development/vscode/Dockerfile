@@ -80,6 +80,14 @@ RUN uv pip install --system --no-cache-dir -r requirements.txt
 RUN uv pip install --system pip
 
 ##
+## Default R packages
+##
+ENV RETICULATE_PYTHON="/usr/bin/python3"
+RUN Rscript -e "install.packages(c('curl', 'openssl', 'remotes', 'httr'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('jsonlite', 'yaml', 'zip', 'data.table', 'rcpp', 'reticulate'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'), clean = TRUE)"
+
+##
 ## Install VScode extensions
 ##
 RUN code-server --install-extension Posit.shiny
