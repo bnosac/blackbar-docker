@@ -27,9 +27,9 @@ RUN /rocker_scripts/install_R_source.sh
 #RUN /rocker_scripts/setup_R.sh
 
 ## Add a default CRAN mirror
-echo "options(repos = c(CRAN = '${CRAN}'), download.file.method = 'libcurl')" >>"${R_HOME}/etc/Rprofile.site"
-cat <<EOF >>"${R_HOME}/etc/Rprofile.site"
-options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))
+RUN echo "options(repos = c(CRAN = '${CRAN}'), download.file.method = 'libcurl')" >>"${R_HOME}/etc/Rprofile.site"
+RUN cat <<EOF >>"${R_HOME}/etc/Rprofile.site" \
+options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"]))) \
 EOF
 
 RUN /rocker_scripts/install_rstudio.sh
