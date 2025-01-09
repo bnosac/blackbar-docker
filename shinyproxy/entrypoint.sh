@@ -15,14 +15,14 @@ if [ -f ${SHINYPROXY_APPLICATION_DIR}/application.yml ]; then
     cp --force ${SHINYPROXY_APPLICATION_DIR}/application.yml /opt/shinyproxy/application.yml
     echo "  - copying ${SHINYPROXY_APPLICATION_DIR}/application.yml to /opt/shinyproxy/application.yml in Shinyproxy container"
 else
-    echo "No 'application.yml' or 'application.tmp' was found: defaulting to demo Shinyproxy configuration"
+    echo "No 'application.yml' was found: defaulting to default Shinyproxy configuration"
 fi
 
 # If there is an apps folder in the SHINYPROXY_INSTALL_DIR, copy the files over (for development purposes)
 if [ -d ${SHINYPROXY_APPLICATION_DIR}/apps ]; then
     echo "  - moving all apps from ${SHINYPROXY_APPLICATION_DIR}/apps to ${SHINYPROXY_INSTALL_DIR} in Shinyproxy container"
     cp --force --recursive ${SHINYPROXY_APPLICATION_DIR}/apps /opt/shinyproxy/blackbar
-    chown -R shinyproxy:blackbar /opt/shinyproxy/blackbar/apps/
+    chown -R $SHINY_USER:$SHINY_USER /opt/shinyproxy/blackbar/apps/
 else
     echo "Note: no 'apps' folder at ${SHINYPROXY_APPLICATION_DIR}"
 fi
