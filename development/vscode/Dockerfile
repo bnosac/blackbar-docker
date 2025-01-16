@@ -94,6 +94,7 @@ RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'markdown', 'r
 RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
 RUN mv /intersystems-jdbc.jar /home/blackbar/intersystems-jdbc.jar
 RUN chown blackbar /home/blackbar/intersystems-jdbc.jar
+RUN Rscript -e "install.packages(c('languageserver'), clean = TRUE)"
 USER blackbar
 #USER coder
 
