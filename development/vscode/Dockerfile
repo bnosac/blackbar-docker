@@ -61,6 +61,11 @@ COPY --from=eclipse-temurin:21 ${JAVA_HOME} ${JAVA_HOME}
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 ##
+## Intersystems database
+##
+RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
+
+##
 ## Install uv
 ## Install Python 3.10 and Python package dependencies
 ##
@@ -87,13 +92,10 @@ RUN Rscript -e "install.packages(c('jsonlite', 'yaml', 'zip', 'data.table', 'Rcp
 RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'), clean = TRUE)"
 
 RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
+RUN mv /intersystems-jdbc.jar /home/blackbar/intersystems-jdbc.jar
+RUN chown blackbar /home/blackbar/intersystems-jdbc.jar
 USER blackbar
 #USER coder
-
-##
-## Intersystems database
-##
-RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
 
 ##
 ## Install VScode extensions
@@ -104,5 +106,3 @@ RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
 RUN code-server --install-extension ms-azuretools.vscode-docker
-
-RUN cp -r /root/.local/share/code-server/extensions /home/blackbar/.local/share/code-server/extensions
