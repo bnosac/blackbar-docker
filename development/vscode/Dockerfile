@@ -91,6 +91,10 @@ RUN Rscript -e "install.packages(c('curl', 'openssl', 'remotes', 'httr'), clean 
 RUN Rscript -e "install.packages(c('jsonlite', 'yaml', 'zip', 'data.table', 'Rcpp', 'reticulate'), clean = TRUE)"
 RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'), clean = TRUE)"
 
+RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
+USER blackbar
+#USER coder
+
 ##
 ## Install VScode extensions
 ##
@@ -100,7 +104,3 @@ RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
 RUN code-server --install-extension ms-azuretools.vscode-docker
-
-RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
-USER blackbar
-#USER coder
