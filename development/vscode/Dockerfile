@@ -61,11 +61,6 @@ COPY --from=eclipse-temurin:21 ${JAVA_HOME} ${JAVA_HOME}
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 ##
-## Intersystems database
-##
-RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
-
-##
 ## Install uv
 ## Install Python 3.10 and Python package dependencies
 ##
@@ -96,6 +91,11 @@ USER blackbar
 #USER coder
 
 ##
+## Intersystems database
+##
+RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
+
+##
 ## Install VScode extensions
 ##
 RUN code-server --install-extension Posit.shiny
@@ -104,3 +104,5 @@ RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
 RUN code-server --install-extension ms-azuretools.vscode-docker
+
+RUN cp -r /root/.local/share/code-server/extensions /home/blackbar/.local/share/code-server/extensions
