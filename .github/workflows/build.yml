@@ -30,7 +30,8 @@ jobs:
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
           - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
           - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", build_args: "llama3.2"}     
-          - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", build_args: "deepseek-r1:7b"}           
+          - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", build_args: "deepseek-r1:7b"}    
+          - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4_K_M", dockerfile: "ollama/Dockerfile", context: "ollama", build_args: "deepseek-r1:14b-qwen-distill-q4_K_M"}          
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
