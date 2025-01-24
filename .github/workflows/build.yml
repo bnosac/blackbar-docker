@@ -28,7 +28,8 @@ jobs:
           - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}    
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
-          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}             
+          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
+          - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", build_args: "llama3.2"}          
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
@@ -82,6 +83,7 @@ jobs:
           push: ${{ github.event_name == 'workflow_dispatch' }}
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ env.VERSION }}"
           file: ${{ matrix.config.dockerfile }}
+          build-args: ${{ matrix.config.build_args }}
 
       # - name: Build and push Dockerhub
       #   uses: docker/build-push-action@v5
