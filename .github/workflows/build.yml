@@ -28,7 +28,10 @@ jobs:
           - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}    
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
-          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}             
+          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
+          - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2"}     
+          - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "deepseek-r1:7b"}    
+          - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
@@ -82,6 +85,8 @@ jobs:
           push: ${{ github.event_name == 'workflow_dispatch' }}
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ env.VERSION }}"
           file: ${{ matrix.config.dockerfile }}
+          build-args: |
+            OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}
 
       # - name: Build and push Dockerhub
       #   uses: docker/build-push-action@v5
