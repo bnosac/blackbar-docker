@@ -97,7 +97,6 @@ RUN chown blackbar /home/blackbar/intersystems-jdbc.jar
 RUN Rscript -e "install.packages(c('languageserver'), clean = TRUE)"
 USER blackbar
 #USER coder
-USER root
 
 ##
 ## Install VScode extensions
