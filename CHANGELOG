@@ -1,5 +1,22 @@
 ## CHANGELOG
 
+### Release TODO
+
+- blackbar-apps 
+   - added Python packages
+      - chatlas + openai (for LLM's with Ollama)
+      - shiny
+- blackbar-shinyproxy is now either
+   - blackbar-shinyproxy-3.0.2 
+   - blackbar-shinyproxy-3.1.1 
+- blackbar-base: 
+   - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
+- blackbar-rstudio: 
+   - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
+- blackbar-vscode: 
+   - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
+   - Runs now under user blackbar
+
 ### Release 0.1.1
     
 - blackbar-rstudio: 
