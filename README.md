@@ -35,10 +35,12 @@ docker pull ghcr.io/bnosac/blackbar-inception-minio-mariadb:latest
 
 - **blackbar-shinyproxy**:  
 
-   - Docker image containing ShinyProxy 3.0.2 and openjdk 11 based on Debian Buster
+   - **blackbar-shinyproxy-3.0.2**: Docker image containing ShinyProxy 3.0.2 and Java 11 based on Debian Buster (openjdk:11-jre-slim-buster)
+   - **blackbar-shinyproxy-3.1.1**: Docker image containing ShinyProxy 3.1.1 and Java 17 based on Ubuntu Jammy (eclipse-temurin:17-jammy)
 
 ```
-docker pull ghcr.io/bnosac/blackbar-shinyproxy:latest
+docker pull ghcr.io/bnosac/blackbar-shinyproxy-3.1.1:latest
+docker pull ghcr.io/bnosac/blackbar-shinyproxy-3.0.2:latest
 ```
 
 - blackbar development environments
