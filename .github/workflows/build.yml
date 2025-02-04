@@ -26,7 +26,8 @@ jobs:
           - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
           - { tag: "inception-minio", dockerfile: "inception/inception-minio/Dockerfile", context: "inception/inception-minio"}
           - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
-          - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}    
+          - { tag: "shinyproxy-3.0.2", dockerfile: "shinyproxy/3.0.2/Dockerfile", context: "shinyproxy-3.0.2"}    
+          - { tag: "shinyproxy-3.1.1", dockerfile: "shinyproxy/3.1.1/Dockerfile", context: "shinyproxy-3.1.1"}   
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
           - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}             
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
