@@ -9,11 +9,6 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 ##
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
-RUN apt update -qq \
-    && apt-get install -y gunicorn uvicorn \
-    && apt-get autoremove -y --quiet \
-    && apt-get clean --quiet \
-    && rm -rf /var/lib/apt/lists/*
 
 ##
 ## Install all R software dependencies
