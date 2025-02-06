@@ -5,12 +5,6 @@ LABEL org.opencontainers.image.description="Anonymisation and Pseudonymisation a
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ##
-## Install all Python software dependencies
-##
-COPY requirements.txt .
-RUN python -m pip install --no-cache-dir -r requirements.txt
-
-##
 ## Install all R software dependencies
 ##
 RUN apt update -qq \
@@ -41,5 +35,10 @@ USER blackbar
 WORKDIR /home/blackbar
 EXPOSE 3838
 
+##
+## Install all Python software dependencies
+##
+COPY requirements.txt .
+RUN python -m pip install --no-cache-dir -r requirements.txt
 
 CMD bash
