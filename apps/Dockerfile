@@ -31,7 +31,7 @@ RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofi
 ##
 USER root
 RUN echo $(python -c "import site; print('\n'.join(site.getsitepackages()))")
-RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") gunicorn
+RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") gunicorn --upgrade
 
 ##
 ## User blackbar
