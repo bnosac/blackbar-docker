@@ -27,6 +27,12 @@ RUN Rscript -e "install.packages(c('flexdashboard'), repos = c(CRAN = 'https://c
 RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofile.site
 
 ##
+## User root
+##
+USER root
+RUN python -m pip install --no-cache-dir gunicorn uvicorn
+
+##
 ## User blackbar
 ##
 RUN groupadd --gid 1000 shiny 
