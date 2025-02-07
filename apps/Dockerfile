@@ -30,7 +30,7 @@ RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofi
 ## User root
 ##
 USER root
-RUN python -m pip install --no-cache-dir gunicorn uvicorn
+RUN python -m pip install --no-cache-dir --target=$(python3.10 -c "import site; print('\n'.join(site.getsitepackages()))") gunicorn uvicorn
 
 ##
 ## User blackbar
