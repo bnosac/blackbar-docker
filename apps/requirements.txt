@@ -2,3 +2,5 @@ shiny>=0.9.0
 chatlas
 openai
 faicons
+shinywidgets
+plotly
