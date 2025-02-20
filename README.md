@@ -52,3 +52,10 @@ docker pull ghcr.io/bnosac/blackbar-shinyproxy-3.0.2:latest
 docker pull ghcr.io/bnosac/blackbar-rstudio:latest
 docker pull ghcr.io/bnosac/blackbar-vscode:latest
 ```
+
+- **blackbar-ollama**:  
+
+   - **blackbar-ollama-llama3.2**: Docker image containing Ollama with Deepllama 3b: https://ollama.com/library/llama3.2:3b
+   - **blackbar-ollama-deepseek-r1-14b-qwen-distill-q4**: Docker image containing Ollama with Deepseek 14b distilled to Qwen: https://ollama.com/library/deepseek-r1:14b-qwen-distill-q4_K_M
+   - **blackbar-ollama-deepscaler-1.5b-preview-q8_0**: Docker image containing Ollama with Deepscaler 1.5b preview: https://ollama.com/library/deepscaler:1.5b-preview-q8_0
+
