@@ -15,6 +15,7 @@ RUN apt-get update \
     curl \
     bash \
     git \
+    acl \
     && rm -rf /var/lib/apt/lists/*
 ##
 ## Install Java from eclipse-temurin (For connection to IRIS)

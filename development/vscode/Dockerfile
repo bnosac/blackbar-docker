@@ -47,6 +47,7 @@ RUN apt-get update \
     curl \
     bash \
     git \
+    acl \
     pkg-config \
     software-properties-common \
     cmake \
