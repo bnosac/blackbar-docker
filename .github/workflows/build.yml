@@ -29,9 +29,11 @@ jobs:
           - { tag: "shinyproxy", dockerfile: "shinyproxy/Dockerfile", context: "shinyproxy"}    
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
           - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
-          - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2"}     
+          - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2:3b"}     
           - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "deepseek-r1:7b"}    
           - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
+          - { tag: "ollama-deepscaler-1.5b", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b"} 
+          - { tag: "ollama-deepscaler-1.5b-preview-q8-0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b-preview-q8_0"} 
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
