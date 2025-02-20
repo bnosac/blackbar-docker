@@ -1,21 +1,38 @@
 ## CHANGELOG
 
-### Release TODO
+### Release 0.2
 
+- blackbar-ollama with pre-downloaded models (for air-gapped environments)
+   - blackbar-ollama-llama3.2
+   - blackbar-ollama-deepseek-r1-14b-qwen-distill-q4
+   - blackbar-ollama-deepseek-r1-7b
 - blackbar-apps 
    - added Python packages
       - chatlas + openai (for LLM's with Ollama)
-      - shiny
+      - shiny + faicons
+      - shinywidgets + plotly
+      - gunicorn + uvicorn
 - blackbar-shinyproxy is now either
    - blackbar-shinyproxy-3.0.2 
    - blackbar-shinyproxy-3.1.1 
 - blackbar-base: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
+   - added acl
 - blackbar-rstudio: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
+   - added Python packages
+      - chatlas + openai (for LLM's with Ollama)
+      - shiny + faicons
+      - shinywidgets + plotly
+   - added acl
 - blackbar-vscode: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - Runs now under user blackbar
+   - added Python packages
+      - chatlas + openai (for LLM's with Ollama)
+      - shiny + faicons
+      - shinywidgets + plotly
+   - added acl
 
 ### Release 0.1.1
     
