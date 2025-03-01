@@ -9,7 +9,7 @@
 - blackbar-apps 
    - added Python packages
       - chatlas + openai (for LLM's with Ollama)
-      - shiny + faicons
+      - shiny + shinyswatch + faicons
       - shinywidgets + plotly
       - gunicorn + uvicorn
 - blackbar-shinyproxy is now either
@@ -22,7 +22,7 @@
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - added Python packages
       - chatlas + openai (for LLM's with Ollama)
-      - shiny + faicons
+      - shiny + shinyswatch + faicons
       - shinywidgets + plotly
    - added acl
 - blackbar-vscode: 
@@ -30,7 +30,7 @@
    - Runs now under user blackbar
    - added Python packages
       - chatlas + openai (for LLM's with Ollama)
-      - shiny + faicons
+      - shiny + shinyswatch + faicons
       - shinywidgets + plotly
    - added acl
 
