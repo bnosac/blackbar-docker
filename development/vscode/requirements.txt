@@ -23,6 +23,7 @@ python-dotenv==1.0.1
 requests==2.31.0
 ## Frontend
 shiny>=0.9.0
+shinyswatch
 #chatlas
 openai
 faicons
