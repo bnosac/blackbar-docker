@@ -23,6 +23,7 @@ RUN apt update -qq \
     && apt-get clean --quiet \
     && rm -rf /var/lib/apt/lists/*
 RUN Rscript -e "install.packages(c('flexdashboard'), repos = c(CRAN = 'https://cran.r-project.org/'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('reticulate'), repos = c(CRAN = 'https://cran.r-project.org/'), clean = TRUE)"
 
 RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofile.site
 
