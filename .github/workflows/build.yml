@@ -86,7 +86,7 @@ jobs:
         shell: bash
         run: |
           pip install uv
-          uv pip install huggingface-hub
+          uv pip install --system huggingface-hub
           mkdir -p ~/.cache/huggingface
           echo "${{ secrets.HF_PASSWORD }}" > ~/.cache/huggingface/token
           git config --global credential.helper store
