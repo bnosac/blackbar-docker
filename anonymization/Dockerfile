@@ -70,6 +70,7 @@ ENV BLACKBAR_DB_JAR=/opt/prefect/intersystems-jdbc.jar
 ENV BLACKBAR_DB_URL="jdbc:IRIS://servername:port/path"
 ENV BLACKBAR_DB_USER="provide-iris-user"
 ENV BLACKBAR_DB_PASSWORD="provide-supersecret-password"
+ENV BLACKBAR_DB_TABLES="default"
 
 ##
 ## Prefect settings 
