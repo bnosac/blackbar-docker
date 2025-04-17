@@ -7,7 +7,7 @@ RUN chmod +x /usr/bin/wait4x
 ## Log in to huggingface
 RUN apt update -qq \
     && apt-get update \
-    && apt-get install python3-pip
+    && apt-get install -y python3-pip
 ARG HF_TOKEN="default"
 ENV HF_TOKEN=${HF_TOKEN}
 RUN pip install huggingface-hub
