@@ -92,7 +92,7 @@ jobs:
           git config --global credential.helper store
           git config --global credential.https://huggingface.co.username ${{ secrets.HF_USERNAME }}
           git config --global credential.https://huggingface.co.password ${{ secrets.HF_PASSWORD }}
-          huggingface-cli whoami
+          # huggingface-cli whoami
 
       - name: Build and push ghcr.io
         uses: docker/build-push-action@v5
