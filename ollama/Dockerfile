@@ -9,7 +9,7 @@ RUN apt update -qq \
     && apt-get update \
     && apt-get install -y python3-pip
 RUN pip install huggingface-hub
-RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_TOKEN"))'
+RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_TOKEN"), add_to_git_credential=False)'
 #RUN python3 -c 'from huggingface_hub import HfFolder;import os;HfFolder.save_token(os.getenv("HF_TOKEN"))'
 #RUN python3 -c 'from huggingface_hub.commands.user import _login;import os; _login(token=os.getenv("HF_TOKEN"))'
 
