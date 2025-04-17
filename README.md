@@ -60,6 +60,8 @@ docker pull ghcr.io/bnosac/blackbar-vscode:latest
    - **blackbar-ollama-deepseek-r1-14b-qwen-distill-q4**: Docker image containing Ollama with [Deepseek 14b distilled to Qwen - quantised q4](https://ollama.com/library/deepseek-r1:14b-qwen-distill-q4_K_M)
    - **blackbar-ollama-deepscaler-1.5b**: Docker image containing Ollama with [Deepscaler 1.5b preview](https://ollama.com/library/deepscaler:1.5b)
    - **blackbar-ollama-deepscaler-1.5b-preview-q8-0**: Docker image containing Ollama with [Deepscaler 1.5b preview  - quantised q8_0](https://ollama.com/library/deepscaler:1.5b-preview-q8_0)
+   - **blackbar-ollama-gemma-3-27b-it-q4_k_m**: Docker image containing Ollama with [Gemma 27b it  - quantised Q4_K_M](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF)
+   - **blackbar-ollama-gemma-3-12b-it-q4_k_m**: Docker image containing Ollama with [Gemma 12b it  - quantised Q4_K_M](https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF)
 
 ```
 docker pull ghcr.io/bnosac/blackbar-ollama-llama3.2
@@ -67,4 +69,6 @@ docker pull ghcr.io/bnosac/blackbar-ollama-deepseek-r1-7b
 docker pull ghcr.io/bnosac/blackbar-ollama-deepseek-r1-14b-qwen-distill-q4
 docker pull ghcr.io/bnosac/blackbar-ollama-deepscaler-1.5b
 docker pull ghcr.io/bnosac/blackbar-ollama-deepscaler-1.5b-preview-q8-0
+docker pull ghcr.io/bnosac/blackbar-ollama-gemma-3-27b-it-q4_k_m
+docker pull ghcr.io/bnosac/blackbar-ollama-gemma-3-12b-it-q4_k_m
 ```

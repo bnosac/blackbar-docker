@@ -35,10 +35,26 @@ jobs:
           - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
           - { tag: "ollama-deepscaler-1.5b", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b"} 
           - { tag: "ollama-deepscaler-1.5b-preview-q8-0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b-preview-q8_0"} 
+          #- { tag: "ollama-gemma-3-27b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/google/gemma-3-27b-it-qat-q4_0-gguf"}                 
+          - { tag: "ollama-gemma-3-27b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/vinimuchulski/gemma-3-27b-it-qat-q4_0-gguf"}   
+          - { tag: "ollama-gemma-3-12b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/vinimuchulski/gemma-3-12b-it-qat-q4_0-gguf"}   
+          - { tag: "ollama-gemma-3-27b-it-q4_k_m", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/bartowski/google_gemma-3-27b-it-GGUF:Q4_K_M"}    
+          - { tag: "ollama-gemma-3-12b-it-q4_k_m", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/bartowski/google_gemma-3-12b-it-GGUF:Q4_K_M"}    
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true        
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: false
+          swap-storage: true
+
       - name: Clone
         uses: actions/checkout@v3
 
@@ -81,6 +97,18 @@ jobs:
       #     username: ${{ secrets.DATATAILOR_REGISTRY_USER }}
       #     password: ${{ secrets.DATATAILOR_REGISTRY_PWD }}
 
+      # - name: Install huggingface-hub
+      #   shell: bash
+      #   run: |
+      #     pipx install uv
+      #     pipx install huggingface-hub
+      #     mkdir -p ~/.cache/huggingface
+      #     echo "${{ secrets.HF_PASSWORD }}" > ~/.cache/huggingface/token
+      #     git config --global credential.helper store
+      #     git config --global credential.https://huggingface.co.username ${{ secrets.HF_USERNAME }}
+      #     git config --global credential.https://huggingface.co.password ${{ secrets.HF_PASSWORD }}
+      #     # huggingface-cli whoami
+
       - name: Build and push ghcr.io
         uses: docker/build-push-action@v5
         with:
@@ -90,6 +118,9 @@ jobs:
           file: ${{ matrix.config.dockerfile }}
           build-args: |
             OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}
+      #      HF_PASSWORD=${{ secrets.HF_PASSWORD }}
+      #    secret-envs: |
+      #      HF_PASSWORD=${{ secrets.HF_PASSWORD }}
 
       # - name: Build and push Dockerhub
       #   uses: docker/build-push-action@v5
