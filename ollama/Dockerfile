@@ -5,6 +5,9 @@ COPY --from=wait /usr/bin/wait4x /usr/bin/
 RUN chmod +x /usr/bin/wait4x
 
 ## Log in to huggingface
+RUN apt update -qq \
+    && apt-get update \
+    && apt-get install python-pip
 ARG HF_TOKEN="default"
 ENV HF_TOKEN=${HF_TOKEN}
 RUN pip install huggingface-hub
