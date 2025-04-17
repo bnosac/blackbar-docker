@@ -35,7 +35,8 @@ jobs:
           - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
           - { tag: "ollama-deepscaler-1.5b", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b"} 
           - { tag: "ollama-deepscaler-1.5b-preview-q8-0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b-preview-q8_0"} 
-          - { tag: "ollama-gemma-3-27b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/google/gemma-3-27b-it-qat-q4_0-gguf"}                 
+          #- { tag: "ollama-gemma-3-27b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/google/gemma-3-27b-it-qat-q4_0-gguf"}                 
+          - { tag: "ollama-gemma-3-27b-it-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/bartowski/google_gemma-3-27b-it-GGUF:Q4_0"}                 
           - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
           - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
@@ -103,9 +104,9 @@ jobs:
           file: ${{ matrix.config.dockerfile }}
           build-args: |
             OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}
-            HF_PASSWORD=${{ secrets.HF_PASSWORD }}
-          secret-envs: |
-            HF_PASSWORD=${{ secrets.HF_PASSWORD }}
+      #      HF_PASSWORD=${{ secrets.HF_PASSWORD }}
+      #    secret-envs: |
+      #      HF_PASSWORD=${{ secrets.HF_PASSWORD }}
 
       # - name: Build and push Dockerhub
       #   uses: docker/build-push-action@v5

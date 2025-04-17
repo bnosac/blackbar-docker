@@ -5,14 +5,14 @@ COPY --from=wait /usr/bin/wait4x /usr/bin/
 RUN chmod +x /usr/bin/wait4x
 
 ## Log in to huggingface
-RUN apt update -qq \
-    && apt-get update \
-    && apt-get install -y python3-pip
-RUN pip install huggingface-hub
-ARG HF_PASSWORD="default"
-ENV HF_PASSWORD=${HF_PASSWORD}
-RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_PASSWORD"), add_to_git_credential=False)'
-ENV HF_PASSWORD="default"
+#RUN apt update -qq \
+#    && apt-get update \
+#    && apt-get install -y python3-pip
+#RUN pip install huggingface-hub
+#ARG HF_PASSWORD="default"
+#ENV HF_PASSWORD=${HF_PASSWORD}
+#RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_PASSWORD"), add_to_git_credential=False)'
+#ENV HF_PASSWORD="default"
 
 ## Define ollama model
 ARG OLLAMA_MODEL="llama3.2"
