@@ -9,10 +9,10 @@ RUN apt update -qq \
     && apt-get update \
     && apt-get install -y python3-pip
 RUN pip install huggingface-hub
-#ARG HF_TOKEN="default"
-#ENV HF_TOKEN=${HF_TOKEN}
-RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_TOKEN"), add_to_git_credential=False)'
-#ENV HF_TOKEN="default"
+ARG HF_PASSWORD="default"
+ENV HF_PASSWORD=${HF_PASSWORD}
+RUN python3 -c 'from huggingface_hub._login import _login;import os; _login(token=os.getenv("HF_PASSWORD"), add_to_git_credential=False)'
+ENV HF_PASSWORD="default"
 
 ## Define ollama model
 ARG OLLAMA_MODEL="llama3.2"

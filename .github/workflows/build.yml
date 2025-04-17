@@ -103,9 +103,9 @@ jobs:
           file: ${{ matrix.config.dockerfile }}
           build-args: |
             OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}
-            HF_TOKEN=${{ secrets.HF_PASSWORD }}
+            HF_PASSWORD=${{ secrets.HF_PASSWORD }}
           secret-envs: |
-            HF_TOKEN=${{ secrets.HF_PASSWORD }}
+            HF_PASSWORD=${{ secrets.HF_PASSWORD }}
 
       # - name: Build and push Dockerhub
       #   uses: docker/build-push-action@v5
