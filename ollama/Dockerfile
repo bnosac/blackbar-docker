@@ -8,11 +8,8 @@ RUN chmod +x /usr/bin/wait4x
 RUN apt update -qq \
     && apt-get update \
     && apt-get install -y python3-pip
-ARG HF_TOKEN="default"
-ENV HF_TOKEN=${HF_TOKEN}
 RUN pip install huggingface-hub
-RUN python -c 'from huggingface_hub.commands.user import _login;import os; _login(token=os.getenv("HF_TOKEN"))'
-ENV HF_TOKEN="default"
+RUN python3 -c 'from huggingface_hub.commands.user import _login;import os; _login(token=os.getenv("HF_TOKEN"))'
 
 ARG OLLAMA_MODEL="llama3.2"
 ENV OLLAMA_MODEL=${OLLAMA_MODEL}
