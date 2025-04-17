@@ -102,8 +102,7 @@ jobs:
           tags: "ghcr.io/bnosac/blackbar-${{ matrix.config.tag }}:${{ env.VERSION }}"
           file: ${{ matrix.config.dockerfile }}
           build-args: |
-            OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}
-            HF_TOKEN=${{ secrets.HF_PASSWORD }}
+            OLLAMA_MODEL=${{ matrix.config.OLLAMA_MODEL }}            
           secret-envs: |
             HF_TOKEN=${{ secrets.HF_PASSWORD }}
 
