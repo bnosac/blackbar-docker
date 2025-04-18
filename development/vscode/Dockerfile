@@ -87,6 +87,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 && update-alternatives --config python3
+ENV CMAKE_ARGS="-DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS"
+RUN uv pip install --system --no-cache-dir llama-cpp-python
 COPY requirements.txt .
 #RUN python3.10 -m pip install --no-cache-dir -r requirements.txt
 #RUN python3    -m pip install --no-cache-dir -r requirements.txt
