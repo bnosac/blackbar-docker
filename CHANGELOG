@@ -18,6 +18,7 @@
 - blackbar-base: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - added acl
+   - Add llama-cpp-python==0.3.8
 - blackbar-rstudio: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - added Python packages
@@ -25,6 +26,7 @@
       - shiny + shinyswatch + faicons
       - shinywidgets + plotly
    - added acl
+   - Add llama-cpp-python==0.3.8
 - blackbar-vscode: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - Runs now under user blackbar
@@ -33,6 +35,7 @@
       - shiny + shinyswatch + faicons
       - shinywidgets + plotly
    - added acl
+   - Add llama-cpp-python==0.3.8
 
 ### Release 0.1.1
     

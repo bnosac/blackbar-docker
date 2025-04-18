@@ -29,3 +29,5 @@ openai
 faicons
 shinywidgets
 plotly
+## Pseudonymization edge cases
+llama-cpp-python==0.3.8
