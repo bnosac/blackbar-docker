@@ -19,3 +19,5 @@ babel==2.14.0
 python-dotenv==1.0.1
 ## In order to connect with Python client to docker correctly
 requests==2.31.0
+## Pseudonymization edge cases
+llama-cpp-python==0.3.8
