@@ -1,14 +1,5 @@
 ## Ubuntu 20.04 VS Code Server
 FROM ghcr.io/rocker-org/rstudio:4.2.1 AS rstudio
-
-## Common utitilities + dependencies for handling audio + OpenBLAS
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget libcurl4-openssl-dev libssl-dev curl bash git \
-    && apt-get install -y --no-install-recommends pkg-config libopenblas-dev libavfilter-dev software-properties-common dirmngr \
-    && apt-get autoremove -y --quiet \
-    && apt-get clean --quiet \
-    && rm -rf /var/lib/apt/lists/*
-
 FROM codercom/code-server:4.95.2-focal
 
 USER root
@@ -87,6 +78,14 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 && update-alternatives --config python3
+
+## llama-cpp-python with OpenBlas
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends wget libcurl4-openssl-dev libssl-dev curl bash git \
+    && apt-get install -y --no-install-recommends pkg-config libopenblas-dev libavfilter-dev software-properties-common dirmngr \
+    && apt-get autoremove -y --quiet \
+    && apt-get clean --quiet \
+    && rm -rf /var/lib/apt/lists/*
 ENV CMAKE_ARGS="-DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS"
 RUN uv pip install --system --no-cache-dir llama-cpp-python
 COPY requirements.txt .
