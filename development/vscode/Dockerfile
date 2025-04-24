@@ -102,9 +102,9 @@ USER blackbar
 ##
 ## Install VScode extensions
 ##
-RUN code-server --install-extension Posit.shiny@1.1.0
 RUN code-server --install-extension ms-python.python
 RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension quarto.quarto
 RUN code-server --install-extension REditorSupport.r
 RUN code-server --install-extension ms-azuretools.vscode-docker
+RUN code-server --install-extension Posit.shiny@1.1.0
