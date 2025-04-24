@@ -6,12 +6,20 @@
    - blackbar-ollama-llama3.2
    - blackbar-ollama-deepseek-r1-14b-qwen-distill-q4
    - blackbar-ollama-deepseek-r1-7b
+   - blackbar-ollama-deepseek-r1-7b   
+   - blackbar-ollama-gemma3-4b-it-qat
+   - blackbar-ollama-gemma3-12b-it-qat
+   - blackbar-ollama-gemma3-27b-it-qat
+   - blackbar-ollama-gemma3-4b-it-qat-q4_0
+   - blackbar-ollama-gemma3-12b-it-qat-q4_0
+   - blackbar-ollama-gemma3-27b-it-qat-q4_0
 - blackbar-apps 
    - added Python packages
       - chatlas + openai (for LLM's with Ollama)
       - shiny + shinyswatch + faicons
       - shinywidgets + plotly
       - gunicorn + uvicorn
+   - R package reticulate updated from 1.28 to 1.42
 - blackbar-shinyproxy is now either
    - blackbar-shinyproxy-3.0.2 
    - blackbar-shinyproxy-3.1.1 
@@ -19,6 +27,7 @@
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - added acl
    - Add llama-cpp-python==0.3.8
+   - Added BLACKBAR_DB_TABLES environment variable
 - blackbar-rstudio: 
    - Fixed requests==2.31.0, In order to connect with Python client to docker correctly
    - added Python packages
