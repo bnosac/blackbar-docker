@@ -63,6 +63,7 @@ docker pull ghcr.io/bnosac/blackbar-vscode:latest
    - **blackbar-ollama-gemma3-27b-it-qat**: Docker image containing Ollama with [Gemma 27b it  - quantised Q4_0](https://www.ollama.com/library/gemma3:27b-it-qat)
    - **blackbar-ollama-gemma3-12b-it-qat**: Docker image containing Ollama with [Gemma 12b it  - quantised Q4_0](https://www.ollama.com/library/gemma3:12b-it-qat)
    - **blackbar-ollama-gemma3-4b-it-qat**: Docker image containing Ollama with [Gemma 4b it  - quantised Q4_0](https://www.ollama.com/library/gemma3:4b-it-qat)
+   - **blackbar-ollama-gemma3-4b-it-qat-q4_0**: Docker image containing Ollama with [Gemma 4b it  - quantised Q4_0 - no vision](https://huggingface.co/vinimuchulski/gemma-3-4b-it-qat-q4_0-gguf)
 
 ```
 docker pull ghcr.io/bnosac/blackbar-ollama-llama3.2
@@ -73,4 +74,5 @@ docker pull ghcr.io/bnosac/blackbar-ollama-deepscaler-1.5b-preview-q8-0
 docker pull ghcr.io/bnosac/blackbar-ollama-gemma3-27b-it-qat
 docker pull ghcr.io/bnosac/blackbar-ollama-gemma3-12b-it-qat
 docker pull ghcr.io/bnosac/blackbar-ollama-gemma3-4b-it-qat
+docker pull ghcr.io/bnosac/blackbar-ollama-gemma3-4b-it-qat-q4_0
 ```
