@@ -1,6 +1,16 @@
 ## Ubuntu 20.04 VS Code Server
 FROM ghcr.io/rocker-org/rstudio:4.2.1 AS rstudio
-FROM codercom/code-server:4.95.2-focal
+FROM codercom/code-server:4.99.3-focal
+
+##
+## Install VScode extensions
+##
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-toolsai.jupyter
+RUN code-server --install-extension quarto.quarto
+RUN code-server --install-extension REditorSupport.r
+RUN code-server --install-extension ms-azuretools.vscode-docker
+RUN code-server --install-extension Posit.shiny
 
 USER root
 
@@ -99,12 +109,4 @@ RUN Rscript -e "install.packages(c('languageserver'), clean = TRUE)"
 USER blackbar
 #USER coder
 
-##
-## Install VScode extensions
-##
-RUN code-server --install-extension ms-python.python
-RUN code-server --install-extension ms-toolsai.jupyter
-RUN code-server --install-extension quarto.quarto
-RUN code-server --install-extension REditorSupport.r
-RUN code-server --install-extension ms-azuretools.vscode-docker
-RUN code-server --install-extension Posit.shiny@1.1.0
+
