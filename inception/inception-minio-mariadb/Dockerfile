@@ -1,6 +1,6 @@
 #FROM minio/minio:latest AS minio
 FROM minio/minio:RELEASE.2024-11-07T00-52-20Z AS minio
-#FROM ghcr.io/inception-project/inception:34.3 AS inception
+#FROM ghcr.io/inception-project/inception:36.5 AS inception
 FROM ghcr.io/inception-project/inception:28.5 AS inception
 FROM mariadb:10.7
 
@@ -46,6 +46,11 @@ COPY --from=inception /opt/inception/inception-app-standalone.jar /opt/inception
 EXPOSE 8080
 ARG INCEPTION_HOST=http://localhost:8080
 ENV INCEPTION_HOST=${INCEPTION_HOST}
+## Settings for authentication - either database or preauth
+ARG INCEPTION_AUTHENTICATION="database"
+ARG INCEPTION_PREAUTH_HEADER="remote_user"
+ENV INCEPTION_AUTHENTICATION=${INCEPTION_AUTHENTICATION}
+ENV INCEPTION_PREAUTH_HEADER=${INCEPTION_PREAUTH_HEADER}
 ## Settings for the admin username and password
 ARG INCEPTION_USERNAME="admin"
 ARG INCEPTION_PASSWORD="provide-supersecret-key"
