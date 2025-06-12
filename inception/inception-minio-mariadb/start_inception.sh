@@ -54,11 +54,12 @@ cat <<EOF >/export/settings.properties
 ##
 ## Login settings
 ##
-auth.mode=database
+auth.mode=INCEPTION_AUTHENTICATION
 security.default-admin-username=INCEPTION_USERNAME
 security.default-admin-password=INCEPTION_PASSWORD
 security.default-admin-remote-access=true
 remote-api.enabled=true
+auth.preauth.header.principal=INCEPTION_PREAUTH_HEADER
 auth.preauth.newuser.roles=ROLE_PROJECT_CREATOR
 ##
 ## Hosted at /inception
@@ -95,6 +96,8 @@ EOF
 sed -i 's|INCEPTION_USERNAME|'"$INCEPTION_USERNAME"'|g' /export/settings.properties
 sed -i 's|INCEPTION_PASSWORD|{bcrypt}'"$INCEPTION_PASSWORD"'|g' /export/settings.properties
 sed -i 's|INCEPTION_HOST|'"$INCEPTION_HOST"'|g' /export/settings.properties
+sed -i 's|INCEPTION_AUTHENTICATION|'"$INCEPTION_AUTHENTICATION"'|g' /export/settings.properties
+sed -i 's|INCEPTION_PREAUTH_HEADER|'"$INCEPTION_PREAUTH_HEADER"'|g' /export/settings.properties
 else 
 echo "------- Existing inception properties file ------"
 fi
