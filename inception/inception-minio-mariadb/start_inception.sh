@@ -61,6 +61,7 @@ security.default-admin-remote-access=true
 remote-api.enabled=true
 auth.preauth.header.principal=INCEPTION_PREAUTH_HEADER
 auth.preauth.newuser.roles=ROLE_PROJECT_CREATOR
+auth.user.INCEPTION_PREAUTH_ADMIN.roles=ROLE_ADMIN
 ##
 ## Hosted at /inception
 ##
@@ -98,6 +99,7 @@ sed -i 's|INCEPTION_PASSWORD|{bcrypt}'"$INCEPTION_PASSWORD"'|g' /export/settings
 sed -i 's|INCEPTION_HOST|'"$INCEPTION_HOST"'|g' /export/settings.properties
 sed -i 's|INCEPTION_AUTHENTICATION|'"$INCEPTION_AUTHENTICATION"'|g' /export/settings.properties
 sed -i 's|INCEPTION_PREAUTH_HEADER|'"$INCEPTION_PREAUTH_HEADER"'|g' /export/settings.properties
+sed -i 's|INCEPTION_PREAUTH_ADMIN|'"$INCEPTION_PREAUTH_ADMIN"'|g' /export/settings.properties
 else 
 echo "------- Existing inception properties file ------"
 fi
