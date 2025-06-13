@@ -1,7 +1,8 @@
 #FROM minio/minio:latest AS minio
 FROM minio/minio:RELEASE.2024-11-07T00-52-20Z AS minio
 #FROM ghcr.io/inception-project/inception:36.5
-FROM ghcr.io/inception-project/inception:28.5
+#FROM ghcr.io/inception-project/inception:28.5
+FROM ghcr.io/inception-project/inception:21.5
 
 ##
 ## Minio
