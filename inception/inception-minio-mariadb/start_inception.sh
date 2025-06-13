@@ -93,6 +93,10 @@ websocket.enabled=true
 ##
 warnings.embeddedDatabase=true
 telemetry.auto-respond=REJECT
+##
+## Disable CAS doctor on import to avoid issue with empty sentences
+##
+document-import.run-cas-doctor-on-import=OFF
 EOF
 sed -i 's|INCEPTION_USERNAME|'"$INCEPTION_USERNAME"'|g' /export/settings.properties
 sed -i 's|INCEPTION_PASSWORD|{bcrypt}'"$INCEPTION_PASSWORD"'|g' /export/settings.properties

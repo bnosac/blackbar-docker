@@ -7,6 +7,7 @@
       - INCEPTION_AUTHENTICATION: either 'database' or 'preauth' (see Inception documentation)
       - INCEPTION_PREAUTH_HEADER: defaults to remote_user (the header which is set by the preauthentication e.g. OIDC)
       - INCEPTION_PREAUTH_ADMIN: defaults to 'admin' (the preathenticated user which gains admin rights)
+   - Disable CAS Doctor on import to avoid issues with empty sentences
 
 ### Release 0.2
 
