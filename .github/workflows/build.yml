@@ -28,7 +28,7 @@ jobs:
           - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
           - { tag: "shinyproxy-3.0.2", dockerfile: "shinyproxy/3.0.2/Dockerfile", context: "shinyproxy/3.0.2"}    
           - { tag: "shinyproxy-3.1.1", dockerfile: "shinyproxy/3.1.1/Dockerfile", context: "shinyproxy/3.1.1"}   
-          - { tag: "shinyproxy-3.2.0", dockerfile: "shinyproxy/3.1.1/Dockerfile", context: "shinyproxy/3.2.0"}   
+          - { tag: "shinyproxy-3.2.0", dockerfile: "shinyproxy/3.2.0/Dockerfile", context: "shinyproxy/3.2.0"}   
           - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
           - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
           - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2:3b"}     
