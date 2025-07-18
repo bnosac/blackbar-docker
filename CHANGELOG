@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### Release 0.2.3
+
+- blackbar-shinyproxy
+   - blackbar-shinyproxy-3.2.0 added
+
 ### Release 0.2.2
 
 - blackbar-inception-minio & blackbar-inception-minio-mariadb:
