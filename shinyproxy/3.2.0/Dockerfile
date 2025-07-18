@@ -1,5 +1,5 @@
 FROM openanalytics/shinyproxy:3.2.0 AS shinyproxy
-FROM public.ecr.aws/docker/library/eclipse-temurin:17-jammy
+FROM public.ecr.aws/docker/library/eclipse-temurin:21-jammy
 
 RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive \
