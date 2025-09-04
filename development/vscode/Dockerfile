@@ -65,9 +65,11 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 ## Database drivers
 ##   - Intersystems IRIS
 ##   - Microsoft SQL Server
+##   - MariaDB
 ##
-RUN wget https://github.com/microsoft/mssql-jdbc/releases/download/v13.2.0/mssql-jdbc-13.2.0.jre11.jar --output-document=mssql-jdbc.jar
 RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
+RUN wget https://github.com/microsoft/mssql-jdbc/releases/download/v13.2.0/mssql-jdbc-13.2.0.jre11.jar --output-document=mssql-jdbc.jar
+RUN wget https://dlm.mariadb.com/4441309/Connectors/java/connector-java-3.5.5/mariadb-java-client-3.5.5.jar --output-document=mariadb-jdbc.jar
 
 ##
 ## Install uv
