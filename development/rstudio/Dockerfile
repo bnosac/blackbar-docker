@@ -26,8 +26,11 @@ COPY --from=eclipse-temurin:21 ${JAVA_HOME} ${JAVA_HOME}
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 ##
-## Intersystems database
+## Database drivers
+##   - Intersystems IRIS
+##   - Microsoft SQL Server
 ##
+RUN wget https://github.com/microsoft/mssql-jdbc/releases/download/v13.2.0/mssql-jdbc-13.2.0.jre11.jar --output-document=mssql-jdbc.jar
 RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
 
 ##

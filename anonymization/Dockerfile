@@ -62,8 +62,11 @@ ENV BLACKBAR_S3_MODEL_NAME=${BLACKBAR_S3_MODEL_NAME}
 ENV BLACKBAR_S3_MODEL_VERSION=${BLACKBAR_S3_MODEL_VERSION}
 
 ##
-## Intersystems database
+## Database drivers
+##   - Intersystems IRIS
+##   - Microsoft SQL Server
 ##
+RUN wget https://github.com/microsoft/mssql-jdbc/releases/download/v13.2.0/mssql-jdbc-13.2.0.jre11.jar --output-document=mssql-jdbc.jar
 RUN wget https://github.com/intersystems-community/iris-driver-distribution/raw/main/JDBC/JDK18/intersystems-jdbc-3.8.0.jar --output-document=intersystems-jdbc.jar
 ENV BLACKBAR_DB="InterSystems IRIS"
 ENV BLACKBAR_DB_JAR=/opt/prefect/intersystems-jdbc.jar
