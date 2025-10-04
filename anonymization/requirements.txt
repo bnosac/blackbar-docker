@@ -1,22 +1,22 @@
-pandas
-numpy
-pycaprio @ git+https://github.com/JavierLuna/pycaprio.git@0.2.1#egg=pycaprio
-dkpro-cassis==0.9.1
-spacy
-torch
-biopython==1.83.0
+pandas==2.2.3
+numpy==2.2.5
+pycaprio==0.3.0
+dkpro-cassis==0.10.1
+spacy==3.8.5
+torch==2.6.0
+biopython==1.85
 jaydebeapi==1.2.3
 minio
 podman
 attrs
-pydantic==1.10.11
-urllib3==1.26.15
-requests-toolbelt==0.10.1
-prefect-dask
-faker==24.0.0
-dateparser==1.2.0
-babel==2.14.0
-python-dotenv==1.0.1
+pydantic
+urllib3
+requests-toolbelt
+prefect[dask]==3.3.5
+faker==37.1.0
+dateparser==1.2.1
+babel
+python-dotenv
 ## In order to connect with Python client to docker correctly
 requests==2.31.0
 ## Pseudonymization edge cases
