@@ -13,7 +13,7 @@ pydantic
 urllib3
 requests-toolbelt
 prefect==3.4.22
-prefect-dask
+prefect-dask==0.3.6
 faker==24.0.0
 dateparser==1.2.0
 babel==2.14.0
