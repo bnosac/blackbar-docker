@@ -1,6 +1,6 @@
 pandas==2.3.2
 numpy==2.2.6
-pycaprio==0.3.1
+pycaprio==0.3.0
 dkpro-cassis==0.10.1
 spacy==3.8.7
 torch==2.8.0
