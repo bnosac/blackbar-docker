@@ -23,26 +23,26 @@ jobs:
       matrix:
         config:
           - { tag: "base", dockerfile: "anonymization/Dockerfile", context: "anonymization"}
-          - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
-          - { tag: "inception-minio", dockerfile: "inception/inception-minio/Dockerfile", context: "inception/inception-minio"}
-          - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
-          #- { tag: "shinyproxy-3.0.2", dockerfile: "shinyproxy/3.0.2/Dockerfile", context: "shinyproxy/3.0.2"}    
-          - { tag: "shinyproxy-3.1.1", dockerfile: "shinyproxy/3.1.1/Dockerfile", context: "shinyproxy/3.1.1"}   
-          - { tag: "shinyproxy-3.2.0", dockerfile: "shinyproxy/3.2.0/Dockerfile", context: "shinyproxy/3.2.0"}   
-          - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
-          - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
-          - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2:3b"}     
-          - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "deepseek-r1:7b"}    
-          - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
-          - { tag: "ollama-deepscaler-1.5b", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b"} 
-          - { tag: "ollama-deepscaler-1.5b-preview-q8-0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b-preview-q8_0"}            
-          - { tag: "ollama-gemma3-12b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/Dampfinchen/google-gemma-3-12b-it-qat-q4_0-gguf-small-fix"} 
-          - { tag: "ollama-gemma3-4b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/Dampfinchen/google-gemma-3-4b-it-qat-q4_0-gguf-small-fix"}  
-          - { tag: "ollama-gemma3-27b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:27b-it-qat"}   
-          - { tag: "ollama-gemma3-12b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:12b-it-qat"} 
-          - { tag: "ollama-gemma3-4b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:4b-it-qat"}   
-          - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
-          - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
+          # - { tag: "base-apps", dockerfile: "apps/Dockerfile", context: "apps"}
+          # - { tag: "inception-minio", dockerfile: "inception/inception-minio/Dockerfile", context: "inception/inception-minio"}
+          # - { tag: "inception-minio-mariadb", dockerfile: "inception/inception-minio-mariadb/Dockerfile", context: "inception/inception-minio-mariadb"}
+          # #- { tag: "shinyproxy-3.0.2", dockerfile: "shinyproxy/3.0.2/Dockerfile", context: "shinyproxy/3.0.2"}    
+          # - { tag: "shinyproxy-3.1.1", dockerfile: "shinyproxy/3.1.1/Dockerfile", context: "shinyproxy/3.1.1"}   
+          # - { tag: "shinyproxy-3.2.0", dockerfile: "shinyproxy/3.2.0/Dockerfile", context: "shinyproxy/3.2.0"}   
+          # - { tag: "rstudio", dockerfile: "development/rstudio/Dockerfile", context: "development/rstudio"}       
+          # - { tag: "vscode", dockerfile: "development/vscode/Dockerfile", context: "development/vscode"}    
+          # - { tag: "ollama-llama3.2", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "llama3.2:3b"}     
+          # - { tag: "ollama-deepseek-r1-7b", dockerfile: "ollama/Dockerfile", context: "ollama", OLLAMA_MODEL: "deepseek-r1:7b"}    
+          # - { tag: "ollama-deepseek-r1-14b-qwen-distill-q4", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepseek-r1:14b-qwen-distill-q4_K_M"} 
+          # - { tag: "ollama-deepscaler-1.5b", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b"} 
+          # - { tag: "ollama-deepscaler-1.5b-preview-q8-0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "deepscaler:1.5b-preview-q8_0"}            
+          # - { tag: "ollama-gemma3-12b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/Dampfinchen/google-gemma-3-12b-it-qat-q4_0-gguf-small-fix"} 
+          # - { tag: "ollama-gemma3-4b-it-qat-q4_0", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "hf.co/Dampfinchen/google-gemma-3-4b-it-qat-q4_0-gguf-small-fix"}  
+          # - { tag: "ollama-gemma3-27b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:27b-it-qat"}   
+          # - { tag: "ollama-gemma3-12b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:12b-it-qat"} 
+          # - { tag: "ollama-gemma3-4b-it-qat", dockerfile: "ollama/Dockerfile", context: "ollama", "OLLAMA_MODEL": "gemma3:4b-it-qat"}   
+          # - { tag: "prefect-example", dockerfile: "development/test/prefectexample/Dockerfile", context: "development/test/prefectexample"}
+          # - { tag: "prefect-inspect", dockerfile: "development/test/prefectinspect/Dockerfile", context: "development/test/prefectinspect"}
 
     steps:
       - name: Free Disk Space (Ubuntu)
