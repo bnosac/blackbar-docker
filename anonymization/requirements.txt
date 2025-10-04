@@ -12,6 +12,7 @@ attrs==23.2.0
 pydantic==1.10.11
 urllib3==1.26.15
 requests-toolbelt==0.10.1
+prefect==2.15.0
 prefect-dask==0.2.9
 faker==24.0.0
 dateparser==1.2.0

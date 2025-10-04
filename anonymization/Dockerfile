@@ -1,4 +1,5 @@
-FROM prefecthq/prefect:3.4.22-python3.10
+#FROM prefecthq/prefect:3.4.22-python3.10
+FROM prefecthq/prefect:2.15.0-python3.10
 LABEL maintainer="BNOSAC blackbar@bnosac.be"
 LABEL org.opencontainers.image.source=https://github.com/bnosac/blackbar-docker
 LABEL org.opencontainers.image.description="Anonymisation and Pseudonymisation - open libraries"
