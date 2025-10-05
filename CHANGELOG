@@ -9,6 +9,7 @@
    - Upgrade to Ubuntu 24.04
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
+   - Based on Ubuntu 24.04 and Java 21
 
 ### Release 0.2.2
 
