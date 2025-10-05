@@ -1,5 +1,5 @@
-## Ubuntu 20.04 with RStudio
-FROM ghcr.io/rocker-org/rstudio:4.2.3
+## Ubuntu 24.04 with RStudio
+FROM ghcr.io/rocker-org/rstudio:4.4.3
 
 ##
 ## System requirements
