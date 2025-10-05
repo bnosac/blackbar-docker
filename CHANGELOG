@@ -9,7 +9,7 @@
    - Upgrade to Ubuntu 24.04
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
-   - Based on Ubuntu 24.04 and Java 21
+   - Based on Ubuntu 24.04 and Java 21 adding "-XX:MaxRAMPercentage=50.0", "-XX:MinRAMPercentage=20.0", "-XX:+ExitOnOutOfMemoryError" to java options at startup
 
 ### Release 0.2.2
 
