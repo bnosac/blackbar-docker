@@ -1,5 +1,5 @@
 FROM openanalytics/shinyproxy:3.2.0 AS shinyproxy
-FROM public.ecr.aws/docker/library/eclipse-temurin:21-jammy
+FROM public.ecr.aws/docker/library/eclipse-temurin:21-jre-noble
 
 RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive \
@@ -26,4 +26,4 @@ USER $SHINY_USER
 EXPOSE 8080
 
 # Start ShinyProxy with some extra parameters for faster startup (https://spring.io/blog/2018/11/08/spring-boot-in-a-container#tweaks)
-CMD ["java",  "-jar", "/opt/shinyproxy/shinyproxy.jar", "--spring.jmx.enabled=false", "--spring.config.location=/opt/shinyproxy/application.yml"]
+CMD ["java", "-Dsun.net.inetaddr.ttl=5", "-XX:MaxRAMPercentage=50.0", "-XX:MinRAMPercentage=20.0", "-XX:+ExitOnOutOfMemoryError", "-jar", "/opt/shinyproxy/shinyproxy.jar", "--spring.jmx.enabled=false", "--spring.config.location=/opt/shinyproxy/application.yml"]
