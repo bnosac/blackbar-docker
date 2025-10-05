@@ -1,10 +1,10 @@
 ## Ubuntu 20.04 VS Code Server
 FROM ghcr.io/rocker-org/rstudio:4.2.3 AS rstudio
-FROM codercom/code-server:4.99.3-focal
+FROM codercom/code-server:4.99.3-jammy
 
 USER root
 
-ENV CRAN="https://p3m.dev/cran/__linux__/focal/latest"
+ENV CRAN="https://p3m.dev/cran/__linux__/jammy/latest"
 ENV LANG=en_US.UTF-8
 ENV R_VERSION="4.2.3"
 ENV R_HOME="/usr/local/lib/R"
