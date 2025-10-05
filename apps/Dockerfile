@@ -10,8 +10,9 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 RUN apt update -qq \
     && apt-get install -y lsb-release \
     && apt-get install -y --reinstall software-properties-common dirmngr \
-    && wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc \
-    && add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
+    && gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' \
+    && gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | tee -a /etc/apt/trusted.gpg.d/cran_debian_key.asc \
+    && add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/debian $(lsb_release -cs)-cran40/" \
     && apt-get update \
     && apt-get install -y --no-install-recommends wget libcurl4-openssl-dev libssl-dev curl bash git pkg-config \
     && apt-get install -y --no-install-recommends r-base \
