@@ -1,7 +1,12 @@
 ## CHANGELOG
 
-### Release 0.2.3
+### Release 0.3.0
 
+- blackbar-rstudio
+   - Upgrade to Ubuntu 24.04
+   - Upgrade to R 4.4.3
+- blackbar-vscode
+   - Upgrade to Ubuntu 24.04
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
 
