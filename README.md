@@ -51,8 +51,8 @@ docker pull ghcr.io/bnosac/blackbar-shinyproxy-3.0.2:latest
        - Docker image containing RStudio, R 4.4.3, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 24.04 (release >= 0.2.3)
        - Docker image containing RStudio, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04 (release <= 0.2.2)
    - **blackbar-vscode**: 
-       - Docker image containing Visual Studio code, R 4.4.3, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 24.04 (release >= 0.2.3)
-       - Docker image containing Visual Studio code, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04 (release <= 0.2.2)
+       - Docker image containing Visual Studio code-server 4.99.3, R 4.4.3, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 24.04 (release >= 0.2.3)
+       - Docker image containing Visual Studio code-server 4.99.3, R 4.2.1, Python 3.10, Python packages relevant for blackbar, Java 21, based on Ubuntu 20.04 (release <= 0.2.2)
 
 ```
 docker pull ghcr.io/bnosac/blackbar-rstudio:latest
