@@ -24,7 +24,12 @@ requests==2.31.0
 ## Pseudonymization edge cases
 llama-cpp-python==0.3.8
 ## Frontend
-shiny>=0.9.0
-shinyswatch
+shiny==1.4.0
+shinyswatch==0.9.0
+chatlas==0.11.1
+openai==1.106.1
+faicons==0.2.2
+shinywidgets==0.7.0
+plotly==6.3.0
 ## Pseudonymization edge cases
 llama-cpp-python==0.3.8
