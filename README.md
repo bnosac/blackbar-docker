@@ -5,8 +5,9 @@ Public docker images for project blackbar
 - **blackbar-base**:  
 
    - Containing core software for project blackbar
-   - Docker image based on prefecthq/prefect, version 3.4.22-python3.10 which is based on Debian 13 (trixie)
-   - Docker image based on prefecthq/prefect, version 2.15.0-python3.10 which is based on Debian 12 (bookworm)
+   - Docker image based on prefecthq/prefect
+       - release >= 0.3.0: based on prefect version 3.4.22-python3.10 which is based on Debian 13 (trixie) 
+       - release <= 0.2.2: based on prefectversion 2.15.0-python3.10 which is based on Debian 12 (bookworm)
 
 ```
 docker pull ghcr.io/bnosac/blackbar-base:latest
