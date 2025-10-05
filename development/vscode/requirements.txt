@@ -1,20 +1,20 @@
 ## Backend
 pandas==2.3.2
 numpy==2.2.6
-pycaprio @ git+https://github.com/JavierLuna/pycaprio.git@0.2.1#egg=pycaprio
-dkpro-cassis==0.9.1
+pycaprio==0.3.0
+dkpro-cassis==0.10.1
 spacy==3.8.7
 torch==2.8.0
 biopython==1.83.0
 jaydebeapi==1.2.3
 minio==7.2.16
 podman==5.5.0
-attrs==23.2.0
-pydantic==1.10.11
-urllib3==1.26.15
-requests-toolbelt==0.10.1
-prefect==2.15.0
-prefect-dask==0.2.9
+attrs
+pydantic
+urllib3
+requests-toolbelt
+prefect==3.4.22
+prefect-dask==0.3.6
 faker==24.0.0
 dateparser==1.2.0
 babel==2.14.0

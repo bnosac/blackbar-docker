@@ -2,14 +2,23 @@
 
 ### Release 0.3.0
 
+- blackbar-vscode
+   - Upgrade to Ubuntu 24.04
+   - Python packages
+      - added prefect==3.4.22 and prefect-dask==0.3.6
+      - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-rstudio
    - Upgrade to Ubuntu 24.04
    - Upgrade to R 4.4.3
-- blackbar-vscode
-   - Upgrade to Ubuntu 24.04
+   - Python packages
+      - added prefect==3.4.22 and prefect-dask==0.3.6
+      - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
    - Based on Ubuntu 24.04 and Java 21 adding "-XX:MaxRAMPercentage=50.0", "-XX:MinRAMPercentage=20.0", "-XX:+ExitOnOutOfMemoryError" to java options at startup
+- blackbar-base
+   - Upgrade to prefect 3.4.22
+   - Based on Debian 13 (trixie)
 
 ### Release 0.2.2
 
@@ -97,7 +106,7 @@
 
 ### Release 0.1
 
-- blackbar-base: image based on prefecthq/prefect, version 2.15.0-python3.10 which is based on Ubuntu 20.04
+- blackbar-base: image based on prefecthq/prefect, version 2.15.0-python3.10 which is based on Debian 12 (bookworm)
 - blackbar-base-apps: image based on ghcr.io/bnosac/blackbar-base + shiny and commonly used shiny extensions (rmarkdown/shinydashboard/slib/fontawesome/knitr/reticulate)
 - blackbar-inception-minio: Inception (28.5) and Minio (RELEASE.2024-11-07T00-52-20Z)
 - blackbar-inception-minio-mariadb: Inception (28.5) and Minio (RELEASE.2024-11-07T00-52-20Z) and MariaDB (10.7)
