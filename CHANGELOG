@@ -4,19 +4,20 @@
 
 - blackbar-vscode
    - Upgrade to Ubuntu 24.04
+   - Upgrade to R 4.5.0   
    - Python packages
       - added prefect==3.4.22 and prefect-dask==0.3.6
       - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-rstudio
    - Upgrade to Ubuntu 24.04
-   - Upgrade to R 4.4.3
+   - Upgrade to R 4.5.0
    - Python packages
       - added prefect==3.4.22 and prefect-dask==0.3.6
       - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
    - Based on Ubuntu 24.04 and Java 21 adding "-XX:MaxRAMPercentage=50.0", "-XX:MinRAMPercentage=20.0", "-XX:+ExitOnOutOfMemoryError" to java options at startup
-- blackbar-base
+- blackbar-base and blackbar-base-apps
    - Upgrade to prefect 3.4.22
    - Based on Debian 13 (trixie)
 

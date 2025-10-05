@@ -1,5 +1,5 @@
 ## Ubuntu 24.04 with RStudio
-FROM ghcr.io/rocker-org/rstudio:4.4.3
+FROM ghcr.io/rocker-org/rstudio:4.5.0
 
 ##
 ## System requirements

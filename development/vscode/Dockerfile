@@ -1,12 +1,12 @@
 ## Ubuntu 24.04 VS Code Server
-FROM ghcr.io/rocker-org/rstudio:4.4.3 AS rstudio
+FROM ghcr.io/rocker-org/rstudio:4.5.0 AS rstudio
 FROM codercom/code-server:4.99.3-noble
 
 USER root
 
 ENV CRAN="https://p3m.dev/cran/__linux__/noble/latest"
 ENV LANG=en_US.UTF-8
-ENV R_VERSION="4.4.3"
+ENV R_VERSION="4.5.0"
 ENV R_HOME="/usr/local/lib/R"
 ENV TZ="Etc/UTC"
 

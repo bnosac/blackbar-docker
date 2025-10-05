@@ -9,11 +9,7 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 ##
 RUN apt update -qq \
     && apt-get install -y lsb-release \
-    && apt-get install -y --reinstall software-properties-common dirmngr \
-    && gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' \
-    && gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | tee -a /etc/apt/trusted.gpg.d/cran_debian_key.asc \
-    && add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/debian $(lsb_release -cs)-cran40/" \
-    && apt-get update \
+    && apt-get install -y --reinstall dirmngr \
     && apt-get install -y --no-install-recommends wget libcurl4-openssl-dev libssl-dev curl bash git pkg-config \
     && apt-get install -y --no-install-recommends r-base \
     && apt-get install -y --no-install-recommends r-cran-rcpp r-cran-data.table r-cran-jsonlite r-cran-zip \
@@ -33,8 +29,8 @@ RUN echo "\noptions(shiny.port = 3838, shiny.host = '0.0.0.0')" >> /etc/R/Rprofi
 ##
 USER root
 RUN echo $(python -c "import site; print('\n'.join(site.getsitepackages()))")
-RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") dkpro-cassis prefect-dask prefect websockets htmltools gunicorn --upgrade
-#RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") websockets htmltools gunicorn --upgrade
+#RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") dkpro-cassis prefect-dask prefect websockets htmltools gunicorn --upgrade
+RUN python -m pip install --no-cache-dir --target=$(python -c "import site; print('\n'.join(site.getsitepackages()))") websockets htmltools gunicorn --upgrade
 
 ##
 ## User blackbar
