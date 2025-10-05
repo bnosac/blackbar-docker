@@ -4,14 +4,14 @@
 
 - blackbar-vscode
    - Upgrade to Ubuntu 24.04
-   - Added Python packages
-      - prefect==3.4.22 and prefect-dask==0.3.6
+   - Python packages
+      - added prefect==3.4.22 and prefect-dask==0.3.6
       - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-rstudio
    - Upgrade to Ubuntu 24.04
    - Upgrade to R 4.4.3
-   - Added Python packages
-      - prefect==3.4.22 and prefect-dask==0.3.6
+   - Python packages
+      - added prefect==3.4.22 and prefect-dask==0.3.6
       - upgrade to pycaprio==0.3.0 and dkpro-cassis==0.10.1
 - blackbar-shinyproxy
    - blackbar-shinyproxy-3.2.0 added
