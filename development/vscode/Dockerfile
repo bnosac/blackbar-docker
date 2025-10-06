@@ -86,11 +86,13 @@ RUN uv pip install --system pip
 
 ##
 ## Default R packages
+##  note: stringr/stringi or to be able to do rmarkdown::run from the RStudio UI
 ##
 ENV RETICULATE_PYTHON="/usr/bin/python3"
 RUN Rscript -e "install.packages(c('curl', 'openssl', 'remotes', 'httr'), clean = TRUE)"
 RUN Rscript -e "install.packages(c('jsonlite', 'yaml', 'zip', 'data.table', 'Rcpp', 'reticulate'), clean = TRUE)"
 RUN Rscript -e "install.packages(c('shiny', 'knitr', 'htmltools', 'markdown', 'rmarkdown', 'shinydashboard', 'flexdashboard', 'bslib', 'fontawesome', 'sass', 'farver', 'DT'), clean = TRUE)"
+RUN Rscript -e "install.packages(c('stringr', 'stringi'), clean = TRUE)"
 
 RUN useradd --create-home --home-dir /home/blackbar --shell /bin/bash blackbar
 RUN mv ./intersystems-jdbc.jar /home/blackbar/intersystems-jdbc.jar
