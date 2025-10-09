@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### Release 0.3.1
+
+- blackbar-inception-minio and blackbar-inception-minio-mariadb
+   - Allow to start up the containers with more memory by passing JAVA_MEM_OPTS (e.g. "-XX:MaxRAMPercentage=80") and JAVA_OPTS
+
 ### Release 0.3.0
 
 - blackbar-vscode
