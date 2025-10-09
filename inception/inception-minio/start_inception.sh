@@ -73,4 +73,4 @@ cat /export/settings.properties
 ## Launch Inception
 ##
 echo "------- Launching Inception ------"
-java "-Xmx750m" -Djava.awt.headless=true -Dinception.home=/export -jar /opt/inception/inception-app-standalone.jar
+java ${JAVA_MEM_OPTS} ${JAVA_OPTS} -Djava.awt.headless=true -Dinception.home=/export -jar /opt/inception/inception-app-standalone.jar
