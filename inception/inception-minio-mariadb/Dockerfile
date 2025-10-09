@@ -67,6 +67,9 @@ ENV INCEPTION_DB_USERNAME=inception
 ENV INCEPTION_DB_PASSWORD=${INCEPTION_PASSWORD}
 ENV INCEPTION_DB_DIALECT=org.hibernate.dialect.MariaDB106Dialect
 ENV INCEPTION_DB_DRIVER=org.mariadb.jdbc.Driver
+## Inception memory settings
+ENV JAVA_MEM_OPTS="-Xmx750m"
+ENV JAVA_OPTS=""
 
 ##
 ## Mariadb

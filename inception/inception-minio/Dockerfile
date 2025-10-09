@@ -56,6 +56,9 @@ ENV INCEPTION_DB_USERNAME=
 ENV INCEPTION_DB_PASSWORD=
 ENV INCEPTION_DB_DIALECT=
 ENV INCEPTION_DB_DRIVER=
+## Inception memory settings
+ENV JAVA_MEM_OPTS="-Xmx750m"
+ENV JAVA_OPTS=""
 
 ##
 ## Combine Minio + Inception with supervisord
