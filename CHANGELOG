@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### Release 0.4
+
+- blackbar-base and blackbar-base-apps
+   - Added python requirements: edsnlp[ml]==0.20.0, transformers==5.3.0, sentencepiece==0.2.1
+- blackbar-vscode
+   - Added python requirements: edsnlp[ml]==0.20.0, transformers==5.3.0, sentencepiece==0.2.1
+- blackbar-rstudio
+   - Added python requirements: edsnlp[ml]==0.20.0, transformers==5.3.0, sentencepiece==0.2.1
+
 ### Release 0.3.2
 
 - blackbar-shinyproxy
