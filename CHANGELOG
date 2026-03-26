@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+### Release 0.4.1
+
+- blackbar-base and blackbar-base-apps
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+- blackbar-vscode
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+- blackbar-rstudio
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+
+
 ### Release 0.4
 
 - blackbar-base and blackbar-base-apps
