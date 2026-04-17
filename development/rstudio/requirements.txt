@@ -3,7 +3,7 @@ pandas==2.3.2
 numpy==2.2.6
 pycaprio==0.3.0
 dkpro-cassis==0.10.1
-spacy==3.8.7
+spacy==3.8.14
 torch==2.8.0
 biopython==1.83.0
 jaydebeapi==1.2.3

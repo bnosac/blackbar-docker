@@ -3,11 +3,11 @@
 ### Release 0.4.1
 
 - blackbar-base and blackbar-base-apps
-   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0 and spacy==3.8.14
 - blackbar-vscode
-   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0 and spacy==3.8.14
 - blackbar-rstudio
-   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0
+   - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0 and spacy==3.8.14
 
 
 ### Release 0.4
