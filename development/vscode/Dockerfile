@@ -82,6 +82,7 @@ COPY requirements.txt .
 #RUN python3.10 -m pip install --no-cache-dir -r requirements.txt
 #RUN python3    -m pip install --no-cache-dir -r requirements.txt
 RUN uv pip install --system --no-cache-dir -r requirements.txt
+RUN uv pip install edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
 RUN uv pip install --system pip
 
 ##
