@@ -29,6 +29,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 ##
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
 
 ####################################################################################################
 ## General settings
