@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### Release 0.4.2
+
+- blackbar-base and blackbar-base-apps
+   - edsnlp[ml]==0.21.0 installed from source to make sure it's binary compatible with spacy==3.8.14
+- blackbar-vscode
+   - edsnlp[ml]==0.21.0 installed from source to make sure it's binary compatible with spacy==3.8.14
+- blackbar-rstudio
+   - edsnlp[ml]==0.21.0 installed from source to make sure it's binary compatible with spacy==3.8.14
+
 ### Release 0.4.1
 
 - blackbar-base and blackbar-base-apps
@@ -8,7 +17,6 @@
    - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0 and spacy==3.8.14
 - blackbar-rstudio
    - Python requirements updated for edsnlp: edsnlp[ml]==0.21.0 and spacy==3.8.14
-
 
 ### Release 0.4
 
