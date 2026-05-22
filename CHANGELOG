@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### Release 0.5.0
+
+- blackbar-base and blackbar-base-apps
+   - upgrade to llama-cpp-python==0.3.23
+- blackbar-vscode
+   - upgrade to llama-cpp-python==0.3.23
+- blackbar-rstudio
+   - upgrade to llama-cpp-python==0.3.23
+
 ### Release 0.4.2
 
 - blackbar-base and blackbar-base-apps
