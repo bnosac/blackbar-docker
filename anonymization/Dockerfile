@@ -27,7 +27,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 ##
 ## Install all Python software dependencies
 ##
-RUN wget llama_cpp_python-0.3.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --output-document=/tmp/llama_cpp_python-0.3.23.whl
+RUN wget https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.23/llama_cpp_python-0.3.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --output-document=/tmp/llama_cpp_python-0.3.23.whl
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 RUN python -m pip install edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
