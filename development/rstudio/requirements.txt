@@ -32,7 +32,8 @@ faicons==0.2.2
 shinywidgets==0.7.0
 plotly==6.3.0
 ## Pseudonymization edge cases
-llama-cpp-python==0.3.23
+#llama-cpp-python==0.3.23
+/tmp/llama_cpp_python-0.3.23.whl
 ## EDS-NLP modelling
 cython==3.2.4
 setuptools==82.0.1

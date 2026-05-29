@@ -81,6 +81,7 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 COPY requirements.txt .
 #RUN python3.10 -m pip install --no-cache-dir -r requirements.txt
 #RUN python3    -m pip install --no-cache-dir -r requirements.txt
+RUN wget llama_cpp_python-0.3.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --output-document=/tmp/llama_cpp_python-0.3.23.whl
 RUN uv pip install --system --no-cache-dir -r requirements.txt
 RUN uv pip install --system edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
 RUN uv pip install --system pip
