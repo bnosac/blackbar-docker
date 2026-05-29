@@ -31,6 +31,7 @@ RUN wget https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.23/l
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 RUN python -m pip install edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
+RUN rm /tmp/llama_cpp_python-0.3.23.whl
 
 ####################################################################################################
 ## General settings

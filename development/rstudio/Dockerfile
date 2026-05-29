@@ -49,6 +49,7 @@ RUN wget https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.23/l
 RUN uv pip install --system --no-cache-dir -r requirements.txt
 RUN uv pip install --system edsnlp[ml]==0.21.0 --no-binary edsnlp --no-build-isolation
 RUN uv pip install --system pip
+RUN rm /tmp/llama_cpp_python-0.3.23.whl
 
 ##
 ## Default R packages
