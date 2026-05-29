@@ -23,7 +23,7 @@ python-dotenv==1.0.1
 requests==2.31.0
 ## Pseudonymization edge cases
 #llama-cpp-python==0.3.23
-/tmp/llama_cpp_python-0.3.23.whl
+/tmp/llama_cpp_python-0.3.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 ## EDS-NLP modelling
 cython==3.2.4
 setuptools==82.0.1
